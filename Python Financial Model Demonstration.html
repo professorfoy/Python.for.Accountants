@@ -1,0 +1,4537 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Financial Modeling! &#8212; Python for Accountants</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Python Financial Model Demonstration';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Python for Accountants logo draft 9-2-23.jpg" class="logo__image only-light" alt="Python for Accountants - Home"/>
+    <script>document.write(`<img src="_static/Python for Accountants logo draft 9-2-23.jpg" class="logo__image only-dark" alt="Python for Accountants - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Python for Accountants
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/professorfoy/Python-for-Accountants/issues/new?title=Issue%20on%20page%20%2FPython Financial Model Demonstration.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Python Financial Model Demonstration.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Financial Modeling!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-packages">Import Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-financial-modeling-prep-with-api-key-define-key-and-ticker-symbol-as-objects">Connect to Financial Modeling Prep with API Key. Define key and ticker symbol as objects.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-link-for-the-type-of-financial-document-you-want-to-download-that-provided-by-fmp-on-the-api-documentation-page">Insert link for the type of financial document you want to download that provided by FMP on the API Documentation page:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-up-the-url-and-use-the-request-package-to-acquire-the-data-from-a-website-format-is-a-string-manipulation-function">Break up the URL and use the request package to acquire the data from a website. Format is a string manipulation function.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-that-the-request-r-is-a-dictionary-in-json-format-and-assign-the-income-statement-data-an-object-name-called-is-data">Verify that the request “r” is a dictionary in JSON format and assign the Income Statement data an object name called IS_data.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-loop-run-a-loop-through-the-key-value-pairs">Example of a loop: run a loop through the key-value pairs.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-is-r-json-bs-r-json-and-cfs-r-json-are-dictionaries">Verify IS_r.json(), BS_r.json and CFS_r.json are dictionaries.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-pandas-to-convert-is-r-bs-r-and-cfs-r-dictionaries-to-dataframes">Use Pandas to convert IS_r, BS_r and CFS_r Dictionaries to DataFrames.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#since-this-is-financial-data-for-is-r-bs-r-and-cfs-r-transpose-the-date-rows-to-columns">Since this is financial data, for IS_r, BS_r and CFS_r, transpose the date rows to columns.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-transposing-the-header-columns-will-show-their-column-index-positions-therefore-the-column-header-names-need-to-replace-the-column-index-positions">When transposing, the header columns will show their column index positions. Therefore, the column header names need to replace the column index positions.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-get-company-financial-ratios">We can get Company Financial Ratios:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-some-financial-ratios-and-practice-calculating-them">Let’s look at some financial ratios and practice calculating them.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-ratio-calculation">Current Ratio Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-blue-now-you-do-it-font"><font color="blue">Now You Do It!</font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-cash-flow-to-sales-ratio">Operating Cash Flow to Sales Ratio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="blue">Now You Do It!</font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-more-complex">Let’s get more complex.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#net-present-value-calculation">Net Present Value Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><font color="blue">Now You Do It!</font></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="financial-modeling">
+<h1>Financial Modeling!<a class="headerlink" href="#financial-modeling" title="Permalink to this heading">#</a></h1>
+<section id="import-packages">
+<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this heading">#</a></h2>
+<p><strong>In Python, we have to import packages to make the functions work. We import the pandas package and rename it as pd as a shortcut when using it. Pandas will allow us to take the data and manipulate it in various ways. The requests package will allow us to pull data from other websites.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="connect-to-financial-modeling-prep-with-api-key-define-key-and-ticker-symbol-as-objects">
+<h3>Connect to Financial Modeling Prep with API Key. Define key and ticker symbol as objects.<a class="headerlink" href="#connect-to-financial-modeling-prep-with-api-key-define-key-and-ticker-symbol-as-objects" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:/Users/zengo/FMP_API_Key.txt&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ticker</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PNC&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="insert-link-for-the-type-of-financial-document-you-want-to-download-that-provided-by-fmp-on-the-api-documentation-page">
+<h3>Insert link for the type of financial document you want to download that provided by FMP on the <a class="reference external" href="https://site.financialmodelingprep.com/developer/docs/">API Documentation page</a>:<a class="headerlink" href="#insert-link-for-the-type-of-financial-document-you-want-to-download-that-provided-by-fmp-on-the-api-documentation-page" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&amp;amp;limit=120&amp;amp;apikey=key">https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&amp;limit=120&amp;apikey=key</a></p>
+</section>
+<section id="break-up-the-url-and-use-the-request-package-to-acquire-the-data-from-a-website-format-is-a-string-manipulation-function">
+<h3>Break up the URL and use the request package to acquire the data from a website. Format is a string manipulation function.<a class="headerlink" href="#break-up-the-url-and-use-the-request-package-to-acquire-the-data-from-a-website-format-is-a-string-manipulation-function" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;https://financialmodelingprep.com/api/v3/&#39;</span>
+<span class="n">IS</span> <span class="o">=</span> <span class="s1">&#39;income-statement/&#39;</span>
+<span class="n">BS</span> <span class="o">=</span> <span class="s1">&#39;balance-sheet-statement/&#39;</span>
+<span class="n">CFS</span> <span class="o">=</span> <span class="s1">&#39;cash-flow-statement/&#39;</span>
+<span class="n">ticker</span> <span class="o">=</span> <span class="n">ticker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">period</span> <span class="o">=</span> <span class="s1">&#39;annual&#39;</span>
+<span class="c1"># Use requests package and use the get function to extract data from a given website by passing in values.</span>
+<span class="c1"># The URL is passed into the first open bracket using the format function.</span>
+<span class="n">IS_r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">?period=</span><span class="si">{}</span><span class="s1">&amp;limit=</span><span class="si">{}</span><span class="s1">&amp;apikey=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">IS</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="n">BS_r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">?period=</span><span class="si">{}</span><span class="s1">&amp;limit=</span><span class="si">{}</span><span class="s1">&amp;apikey=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">BS</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="n">CFS_r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">?period=</span><span class="si">{}</span><span class="s1">&amp;limit=</span><span class="si">{}</span><span class="s1">&amp;apikey=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">CFS</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IS_r</span>
+<span class="n">BS_r</span>
+<span class="n">CFS_r</span>
+<span class="c1"># Response 200 shows the get request is successful.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verify-that-the-request-r-is-a-dictionary-in-json-format-and-assign-the-income-statement-data-an-object-name-called-is-data">
+<h3>Verify that the request “r” is a dictionary in JSON format and assign the Income Statement data an object name called IS_data.<a class="headerlink" href="#verify-that-the-request-r-is-a-dictionary-in-json-format-and-assign-the-income-statement-data-an-object-name-called-is-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IS_data</span> <span class="o">=</span> <span class="n">IS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">IS_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date&#39;: &#39;2022-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2023-02-22&#39;,
+  &#39;acceptedDate&#39;: &#39;2023-02-22 16:06:13&#39;,
+  &#39;calendarYear&#39;: &#39;2022&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;revenue&#39;: 21114000000,
+  &#39;costOfRevenue&#39;: 2387000000,
+  &#39;grossProfit&#39;: 18727000000,
+  &#39;grossProfitRatio&#39;: 0.8869470494,
+  &#39;researchAndDevelopmentExpenses&#39;: 0,
+  &#39;generalAndAdministrativeExpenses&#39;: 7244000000,
+  &#39;sellingAndMarketingExpenses&#39;: 355000000,
+  &#39;sellingGeneralAndAdministrativeExpenses&#39;: 7599000000,
+  &#39;otherExpenses&#39;: 0,
+  &#39;operatingExpenses&#39;: 355000000,
+  &#39;costAndExpenses&#39;: 355000000,
+  &#39;interestIncome&#39;: 15436000000,
+  &#39;interestExpense&#39;: 2422000000,
+  &#39;depreciationAndAmortization&#39;: 651000000,
+  &#39;ebitda&#39;: 10168000000,
+  &#39;ebitdaratio&#39;: 0.4815762054,
+  &#39;operatingIncome&#39;: 9517000000,
+  &#39;operatingIncomeRatio&#39;: 0.4507435825,
+  &#39;totalOtherIncomeExpensesNet&#39;: -2044000000,
+  &#39;incomeBeforeTax&#39;: 7473000000,
+  &#39;incomeBeforeTaxRatio&#39;: 0.3539357772,
+  &#39;incomeTaxExpense&#39;: 1360000000,
+  &#39;netIncome&#39;: 6041000000,
+  &#39;netIncomeRatio&#39;: 0.2861134792,
+  &#39;eps&#39;: 13.43,
+  &#39;epsdiluted&#39;: 13.43,
+  &#39;weightedAverageShsOut&#39;: 427000000,
+  &#39;weightedAverageShsOutDil&#39;: 427000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/0000713676-23-000020-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/pnc-20221231.htm&#39;},
+ {&#39;date&#39;: &#39;2021-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2022-02-25&#39;,
+  &#39;acceptedDate&#39;: &#39;2022-02-25 17:17:06&#39;,
+  &#39;calendarYear&#39;: &#39;2021&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;revenue&#39;: 19135000000,
+  &#39;costOfRevenue&#39;: 2351000000,
+  &#39;grossProfit&#39;: 16784000000,
+  &#39;grossProfitRatio&#39;: 0.877136138,
+  &#39;researchAndDevelopmentExpenses&#39;: 0,
+  &#39;generalAndAdministrativeExpenses&#39;: 7141000000,
+  &#39;sellingAndMarketingExpenses&#39;: 319000000,
+  &#39;sellingGeneralAndAdministrativeExpenses&#39;: 7460000000,
+  &#39;otherExpenses&#39;: -19658000000,
+  &#39;operatingExpenses&#39;: -12198000000,
+  &#39;costAndExpenses&#39;: -12198000000,
+  &#39;interestIncome&#39;: 11134000000,
+  &#39;interestExpense&#39;: 487000000,
+  &#39;depreciationAndAmortization&#39;: 1773000000,
+  &#39;ebitda&#39;: 8710000000,
+  &#39;ebitdaratio&#39;: 0.4551868304,
+  &#39;operatingIncome&#39;: 6937000000,
+  &#39;operatingIncomeRatio&#39;: 0.3625293964,
+  &#39;totalOtherIncomeExpensesNet&#39;: 51000000,
+  &#39;incomeBeforeTax&#39;: 6988000000,
+  &#39;incomeBeforeTaxRatio&#39;: 0.3651946695,
+  &#39;incomeTaxExpense&#39;: 1263000000,
+  &#39;netIncome&#39;: 5674000000,
+  &#39;netIncomeRatio&#39;: 0.296524693,
+  &#39;eps&#39;: 12.71,
+  &#39;epsdiluted&#39;: 12.7,
+  &#39;weightedAverageShsOut&#39;: 426000000,
+  &#39;weightedAverageShsOutDil&#39;: 426000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/0000713676-22-000019-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/pnc-20211231.htm&#39;},
+ {&#39;date&#39;: &#39;2020-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2021-02-26&#39;,
+  &#39;acceptedDate&#39;: &#39;2021-02-26 13:29:49&#39;,
+  &#39;calendarYear&#39;: &#39;2020&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;revenue&#39;: 16901000000,
+  &#39;costOfRevenue&#39;: 2002000000,
+  &#39;grossProfit&#39;: 14899000000,
+  &#39;grossProfitRatio&#39;: 0.8815454707,
+  &#39;researchAndDevelopmentExpenses&#39;: 0,
+  &#39;generalAndAdministrativeExpenses&#39;: 5673000000,
+  &#39;sellingAndMarketingExpenses&#39;: 236000000,
+  &#39;sellingGeneralAndAdministrativeExpenses&#39;: 5909000000,
+  &#39;otherExpenses&#39;: -14867000000,
+  &#39;operatingExpenses&#39;: -8958000000,
+  &#39;costAndExpenses&#39;: -8958000000,
+  &#39;interestIncome&#39;: 11307000000,
+  &#39;interestExpense&#39;: 1361000000,
+  &#39;depreciationAndAmortization&#39;: 1497000000,
+  &#39;ebitda&#39;: 9440000000,
+  &#39;ebitdaratio&#39;: 0.5585468315,
+  &#39;operatingIncome&#39;: 7943000000,
+  &#39;operatingIncomeRatio&#39;: 0.469972191,
+  &#39;totalOtherIncomeExpensesNet&#39;: -4514000000,
+  &#39;incomeBeforeTax&#39;: 3429000000,
+  &#39;incomeBeforeTaxRatio&#39;: 0.2028874031,
+  &#39;incomeTaxExpense&#39;: 426000000,
+  &#39;netIncome&#39;: 3003000000,
+  &#39;netIncomeRatio&#39;: 0.177681794,
+  &#39;eps&#39;: 7.03,
+  &#39;epsdiluted&#39;: 7.03,
+  &#39;weightedAverageShsOut&#39;: 427000000,
+  &#39;weightedAverageShsOutDil&#39;: 427000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/0000713676-21-000025-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/pnc-20201231.htm&#39;},
+ {&#39;date&#39;: &#39;2019-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2020-03-02&#39;,
+  &#39;acceptedDate&#39;: &#39;2020-02-28 19:05:36&#39;,
+  &#39;calendarYear&#39;: &#39;2019&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;revenue&#39;: 17827000000,
+  &#39;costOfRevenue&#39;: 2044000000,
+  &#39;grossProfit&#39;: 15783000000,
+  &#39;grossProfitRatio&#39;: 0.8853424581,
+  &#39;researchAndDevelopmentExpenses&#39;: 0,
+  &#39;generalAndAdministrativeExpenses&#39;: 5647000000,
+  &#39;sellingAndMarketingExpenses&#39;: 301000000,
+  &#39;sellingGeneralAndAdministrativeExpenses&#39;: 5948000000,
+  &#39;otherExpenses&#39;: -17344000000,
+  &#39;operatingExpenses&#39;: -11396000000,
+  &#39;costAndExpenses&#39;: -11396000000,
+  &#39;interestIncome&#39;: 13762000000,
+  &#39;interestExpense&#39;: 3797000000,
+  &#39;depreciationAndAmortization&#39;: 1315000000,
+  &#39;ebitda&#39;: 7746000000,
+  &#39;ebitdaratio&#39;: 0.434509452,
+  &#39;operatingIncome&#39;: 6431000000,
+  &#39;operatingIncomeRatio&#39;: 0.3607449375,
+  &#39;totalOtherIncomeExpensesNet&#39;: 49000000,
+  &#39;incomeBeforeTax&#39;: 6480000000,
+  &#39;incomeBeforeTaxRatio&#39;: 0.3634935772,
+  &#39;incomeTaxExpense&#39;: 1062000000,
+  &#39;netIncome&#39;: 5369000000,
+  &#39;netIncomeRatio&#39;: 0.301172379,
+  &#39;eps&#39;: 11.43,
+  &#39;epsdiluted&#39;: 11.39,
+  &#39;weightedAverageShsOut&#39;: 447000000,
+  &#39;weightedAverageShsOutDil&#39;: 448000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/0000713676-20-000042-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/pnc201910-k.htm&#39;},
+ {&#39;date&#39;: &#39;2018-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2019-03-01&#39;,
+  &#39;acceptedDate&#39;: &#39;2019-03-01 09:19:59&#39;,
+  &#39;calendarYear&#39;: &#39;2018&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;revenue&#39;: 17132000000,
+  &#39;costOfRevenue&#39;: 1921000000,
+  &#39;grossProfit&#39;: 15211000000,
+  &#39;grossProfitRatio&#39;: 0.8878706514,
+  &#39;researchAndDevelopmentExpenses&#39;: 0,
+  &#39;generalAndAdministrativeExpenses&#39;: 5471000000,
+  &#39;sellingAndMarketingExpenses&#39;: 285000000,
+  &#39;sellingGeneralAndAdministrativeExpenses&#39;: 5756000000,
+  &#39;otherExpenses&#39;: -13644000000,
+  &#39;operatingExpenses&#39;: -7888000000,
+  &#39;costAndExpenses&#39;: -7888000000,
+  &#39;interestIncome&#39;: 12582000000,
+  &#39;interestExpense&#39;: 2861000000,
+  &#39;depreciationAndAmortization&#39;: 1129000000,
+  &#39;ebitda&#39;: 10373000000,
+  &#39;ebitdaratio&#39;: 0.6054751343,
+  &#39;operatingIncome&#39;: 9244000000,
+  &#39;operatingIncomeRatio&#39;: 0.5395750642,
+  &#39;totalOtherIncomeExpensesNet&#39;: -2816000000,
+  &#39;incomeBeforeTax&#39;: 6428000000,
+  &#39;incomeBeforeTaxRatio&#39;: 0.3752042961,
+  &#39;incomeTaxExpense&#39;: 1082000000,
+  &#39;netIncome&#39;: 5301000000,
+  &#39;netIncomeRatio&#39;: 0.3094209666,
+  &#39;eps&#39;: 11.35,
+  &#39;epsdiluted&#39;: 11.28,
+  &#39;weightedAverageShsOut&#39;: 467000000,
+  &#39;weightedAverageShsOutDil&#39;: 470000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/0000713676-19-000015-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/pnc201810k.htm&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BS_data</span> <span class="o">=</span> <span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">BS_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date&#39;: &#39;2022-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2023-02-22&#39;,
+  &#39;acceptedDate&#39;: &#39;2023-02-22 16:06:13&#39;,
+  &#39;calendarYear&#39;: &#39;2022&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;cashAndCashEquivalents&#39;: 34363000000,
+  &#39;shortTermInvestments&#39;: 44159000000,
+  &#39;cashAndShortTermInvestments&#39;: 146377000000,
+  &#39;netReceivables&#39;: 6404000000,
+  &#39;inventory&#39;: 0,
+  &#39;otherCurrentAssets&#39;: 0,
+  &#39;totalCurrentAssets&#39;: 146377000000,
+  &#39;propertyPlantEquipmentNet&#39;: 0,
+  &#39;goodwill&#39;: 10987000000,
+  &#39;intangibleAssets&#39;: 3423000000,
+  &#39;goodwillAndIntangibleAssets&#39;: 14410000000,
+  &#39;longTermInvestments&#39;: 147771000000,
+  &#39;taxAssets&#39;: 0,
+  &#39;otherNonCurrentAssets&#39;: -11860000000,
+  &#39;totalNonCurrentAssets&#39;: 150321000000,
+  &#39;otherAssets&#39;: 260565000000,
+  &#39;totalAssets&#39;: 557263000000,
+  &#39;accountPayables&#39;: 0,
+  &#39;shortTermDebt&#39;: 0,
+  &#39;taxPayables&#39;: 0,
+  &#39;deferredRevenue&#39;: 0,
+  &#39;otherCurrentLiabilities&#39;: 0,
+  &#39;totalCurrentLiabilities&#39;: 0,
+  &#39;longTermDebt&#39;: 58713000000,
+  &#39;deferredRevenueNonCurrent&#39;: 0,
+  &#39;deferredTaxLiabilitiesNonCurrent&#39;: 0,
+  &#39;otherNonCurrentLiabilities&#39;: -58713000000,
+  &#39;totalNonCurrentLiabilities&#39;: 511451000000,
+  &#39;otherLiabilities&#39;: 511451000000,
+  &#39;capitalLeaseObligations&#39;: 0,
+  &#39;totalLiabilities&#39;: 511451000000,
+  &#39;preferredStock&#39;: 0,
+  &#39;commonStock&#39;: 2714000000,
+  &#39;retainedEarnings&#39;: 53572000000,
+  &#39;accumulatedOtherComprehensiveIncomeLoss&#39;: -10172000000,
+  &#39;othertotalStockholdersEquity&#39;: -340000000,
+  &#39;totalStockholdersEquity&#39;: 45774000000,
+  &#39;totalEquity&#39;: 45774000000,
+  &#39;totalLiabilitiesAndStockholdersEquity&#39;: 557263000000,
+  &#39;minorityInterest&#39;: 38000000,
+  &#39;totalLiabilitiesAndTotalEquity&#39;: 557263000000,
+  &#39;totalInvestments&#39;: 278668000000,
+  &#39;totalDebt&#39;: 58713000000,
+  &#39;netDebt&#39;: 24350000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/0000713676-23-000020-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/pnc-20221231.htm&#39;},
+ {&#39;date&#39;: &#39;2021-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2022-02-25&#39;,
+  &#39;acceptedDate&#39;: &#39;2022-02-25 17:17:06&#39;,
+  &#39;calendarYear&#39;: &#39;2021&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;cashAndCashEquivalents&#39;: 82254000000,
+  &#39;shortTermInvestments&#39;: 131536000000,
+  &#39;cashAndShortTermInvestments&#39;: 213790000000,
+  &#39;netReceivables&#39;: 6040000000,
+  &#39;inventory&#39;: 0,
+  &#39;otherCurrentAssets&#39;: 0,
+  &#39;totalCurrentAssets&#39;: 219830000000,
+  &#39;propertyPlantEquipmentNet&#39;: 1919000000,
+  &#39;goodwill&#39;: 10916000000,
+  &#39;intangibleAssets&#39;: 1818000000,
+  &#39;goodwillAndIntangibleAssets&#39;: 12734000000,
+  &#39;longTermInvestments&#39;: 141142000000,
+  &#39;taxAssets&#39;: 0,
+  &#39;otherNonCurrentAssets&#39;: -155795000000,
+  &#39;totalNonCurrentAssets&#39;: 155795000000,
+  &#39;otherAssets&#39;: 182823000000,
+  &#39;totalAssets&#39;: 558448000000,
+  &#39;accountPayables&#39;: 0,
+  &#39;shortTermDebt&#39;: 0,
+  &#39;taxPayables&#39;: 0,
+  &#39;deferredRevenue&#39;: 0,
+  &#39;otherCurrentLiabilities&#39;: 0,
+  &#39;totalCurrentLiabilities&#39;: 0,
+  &#39;longTermDebt&#39;: 30784000000,
+  &#39;deferredRevenueNonCurrent&#39;: 0,
+  &#39;deferredTaxLiabilitiesNonCurrent&#39;: 0,
+  &#39;otherNonCurrentLiabilities&#39;: -30784000000,
+  &#39;totalNonCurrentLiabilities&#39;: 30784000000,
+  &#39;otherLiabilities&#39;: 0,
+  &#39;capitalLeaseObligations&#39;: 2220000000,
+  &#39;totalLiabilities&#39;: 30784000000,
+  &#39;preferredStock&#39;: 0,
+  &#39;commonStock&#39;: 2713000000,
+  &#39;retainedEarnings&#39;: 50228000000,
+  &#39;accumulatedOtherComprehensiveIncomeLoss&#39;: 409000000,
+  &#39;othertotalStockholdersEquity&#39;: 2345000000,
+  &#39;totalStockholdersEquity&#39;: 55695000000,
+  &#39;totalEquity&#39;: 55695000000,
+  &#39;totalLiabilitiesAndStockholdersEquity&#39;: 558448000000,
+  &#39;minorityInterest&#39;: 31000000,
+  &#39;totalLiabilitiesAndTotalEquity&#39;: 558448000000,
+  &#39;totalInvestments&#39;: 272678000000,
+  &#39;totalDebt&#39;: 30784000000,
+  &#39;netDebt&#39;: -51470000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/0000713676-22-000019-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/pnc-20211231.htm&#39;},
+ {&#39;date&#39;: &#39;2020-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2021-02-26&#39;,
+  &#39;acceptedDate&#39;: &#39;2021-02-26 13:29:49&#39;,
+  &#39;calendarYear&#39;: &#39;2020&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;cashAndCashEquivalents&#39;: 92190000000,
+  &#39;shortTermInvestments&#39;: 87358000000,
+  &#39;cashAndShortTermInvestments&#39;: 179548000000,
+  &#39;netReceivables&#39;: 6414000000,
+  &#39;inventory&#39;: 0,
+  &#39;otherCurrentAssets&#39;: 0,
+  &#39;totalCurrentAssets&#39;: 185962000000,
+  &#39;propertyPlantEquipmentNet&#39;: 0,
+  &#39;goodwill&#39;: 9233000000,
+  &#39;intangibleAssets&#39;: 1242000000,
+  &#39;goodwillAndIntangibleAssets&#39;: 10475000000,
+  &#39;longTermInvestments&#39;: 94851000000,
+  &#39;taxAssets&#39;: 0,
+  &#39;otherNonCurrentAssets&#39;: -105326000000,
+  &#39;totalNonCurrentAssets&#39;: 105326000000,
+  &#39;otherAssets&#39;: 175391000000,
+  &#39;totalAssets&#39;: 466679000000,
+  &#39;accountPayables&#39;: 0,
+  &#39;shortTermDebt&#39;: 0,
+  &#39;taxPayables&#39;: 0,
+  &#39;deferredRevenue&#39;: 0,
+  &#39;otherCurrentLiabilities&#39;: 0,
+  &#39;totalCurrentLiabilities&#39;: 0,
+  &#39;longTermDebt&#39;: 37195000000,
+  &#39;deferredRevenueNonCurrent&#39;: 0,
+  &#39;deferredTaxLiabilitiesNonCurrent&#39;: 0,
+  &#39;otherNonCurrentLiabilities&#39;: -37195000000,
+  &#39;totalNonCurrentLiabilities&#39;: 37195000000,
+  &#39;otherLiabilities&#39;: 0,
+  &#39;capitalLeaseObligations&#39;: 0,
+  &#39;totalLiabilities&#39;: 37195000000,
+  &#39;preferredStock&#39;: 0,
+  &#39;commonStock&#39;: 2713000000,
+  &#39;retainedEarnings&#39;: 46848000000,
+  &#39;accumulatedOtherComprehensiveIncomeLoss&#39;: 2770000000,
+  &#39;othertotalStockholdersEquity&#39;: 1679000000,
+  &#39;totalStockholdersEquity&#39;: 54010000000,
+  &#39;totalEquity&#39;: 54010000000,
+  &#39;totalLiabilitiesAndStockholdersEquity&#39;: 466679000000,
+  &#39;minorityInterest&#39;: 31000000,
+  &#39;totalLiabilitiesAndTotalEquity&#39;: 466679000000,
+  &#39;totalInvestments&#39;: 182209000000,
+  &#39;totalDebt&#39;: 37195000000,
+  &#39;netDebt&#39;: -54995000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/0000713676-21-000025-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/pnc-20201231.htm&#39;},
+ {&#39;date&#39;: &#39;2019-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2020-03-02&#39;,
+  &#39;acceptedDate&#39;: &#39;2020-02-28 19:05:36&#39;,
+  &#39;calendarYear&#39;: &#39;2019&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;cashAndCashEquivalents&#39;: 28474000000,
+  &#39;shortTermInvestments&#39;: 69163000000,
+  &#39;cashAndShortTermInvestments&#39;: 97637000000,
+  &#39;netReceivables&#39;: 7155000000,
+  &#39;inventory&#39;: 0,
+  &#39;otherCurrentAssets&#39;: 0,
+  &#39;totalCurrentAssets&#39;: 104792000000,
+  &#39;propertyPlantEquipmentNet&#39;: 0,
+  &#39;goodwill&#39;: 9233000000,
+  &#39;intangibleAssets&#39;: 1644000000,
+  &#39;goodwillAndIntangibleAssets&#39;: 10877000000,
+  &#39;longTermInvestments&#39;: 100558000000,
+  &#39;taxAssets&#39;: 0,
+  &#39;otherNonCurrentAssets&#39;: -111435000000,
+  &#39;totalNonCurrentAssets&#39;: 111435000000,
+  &#39;otherAssets&#39;: 194068000000,
+  &#39;totalAssets&#39;: 410295000000,
+  &#39;accountPayables&#39;: 0,
+  &#39;shortTermDebt&#39;: 318000000,
+  &#39;taxPayables&#39;: 0,
+  &#39;deferredRevenue&#39;: 0,
+  &#39;otherCurrentLiabilities&#39;: -318000000,
+  &#39;totalCurrentLiabilities&#39;: 318000000,
+  &#39;longTermDebt&#39;: 60263000000,
+  &#39;deferredRevenueNonCurrent&#39;: 0,
+  &#39;deferredTaxLiabilitiesNonCurrent&#39;: 0,
+  &#39;otherNonCurrentLiabilities&#39;: -60263000000,
+  &#39;totalNonCurrentLiabilities&#39;: 60263000000,
+  &#39;otherLiabilities&#39;: 300371000000,
+  &#39;capitalLeaseObligations&#39;: 0,
+  &#39;totalLiabilities&#39;: 360952000000,
+  &#39;preferredStock&#39;: 0,
+  &#39;commonStock&#39;: 2712000000,
+  &#39;retainedEarnings&#39;: 42215000000,
+  &#39;accumulatedOtherComprehensiveIncomeLoss&#39;: 799000000,
+  &#39;othertotalStockholdersEquity&#39;: 3588000000,
+  &#39;totalStockholdersEquity&#39;: 49314000000,
+  &#39;totalEquity&#39;: 49314000000,
+  &#39;totalLiabilitiesAndStockholdersEquity&#39;: 410295000000,
+  &#39;minorityInterest&#39;: 29000000,
+  &#39;totalLiabilitiesAndTotalEquity&#39;: 410295000000,
+  &#39;totalInvestments&#39;: 169721000000,
+  &#39;totalDebt&#39;: 60263000000,
+  &#39;netDebt&#39;: 31789000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/0000713676-20-000042-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/pnc201910-k.htm&#39;},
+ {&#39;date&#39;: &#39;2018-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2019-03-01&#39;,
+  &#39;acceptedDate&#39;: &#39;2019-03-01 09:19:59&#39;,
+  &#39;calendarYear&#39;: &#39;2018&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;cashAndCashEquivalents&#39;: 16501000000,
+  &#39;shortTermInvestments&#39;: 63389000000,
+  &#39;cashAndShortTermInvestments&#39;: 17848000000,
+  &#39;netReceivables&#39;: 7308000000,
+  &#39;inventory&#39;: 0,
+  &#39;otherCurrentAssets&#39;: 0,
+  &#39;totalCurrentAssets&#39;: 25114000000,
+  &#39;propertyPlantEquipmentNet&#39;: 0,
+  &#39;goodwill&#39;: 9218000000,
+  &#39;intangibleAssets&#39;: 1983000000,
+  &#39;goodwillAndIntangibleAssets&#39;: 11201000000,
+  &#39;longTermInvestments&#39;: 95595000000,
+  &#39;taxAssets&#39;: 0,
+  &#39;otherNonCurrentAssets&#39;: -106796000000,
+  &#39;totalNonCurrentAssets&#39;: 106796000000,
+  &#39;otherAssets&#39;: 250405000000,
+  &#39;totalAssets&#39;: 382315000000,
+  &#39;accountPayables&#39;: 0,
+  &#39;shortTermDebt&#39;: 285000000,
+  &#39;taxPayables&#39;: 0,
+  &#39;deferredRevenue&#39;: 0,
+  &#39;otherCurrentLiabilities&#39;: 0,
+  &#39;totalCurrentLiabilities&#39;: 285000000,
+  &#39;longTermDebt&#39;: 57419000000,
+  &#39;deferredRevenueNonCurrent&#39;: 0,
+  &#39;deferredTaxLiabilitiesNonCurrent&#39;: 0,
+  &#39;otherNonCurrentLiabilities&#39;: 0,
+  &#39;totalNonCurrentLiabilities&#39;: 57419000000,
+  &#39;otherLiabilities&#39;: 276841000000,
+  &#39;capitalLeaseObligations&#39;: 0,
+  &#39;totalLiabilities&#39;: 334545000000,
+  &#39;preferredStock&#39;: 0,
+  &#39;commonStock&#39;: 2711000000,
+  &#39;retainedEarnings&#39;: 38919000000,
+  &#39;accumulatedOtherComprehensiveIncomeLoss&#39;: -725000000,
+  &#39;othertotalStockholdersEquity&#39;: 6823000000,
+  &#39;totalStockholdersEquity&#39;: 47728000000,
+  &#39;totalEquity&#39;: 47728000000,
+  &#39;totalLiabilitiesAndStockholdersEquity&#39;: 382315000000,
+  &#39;minorityInterest&#39;: 42000000,
+  &#39;totalLiabilitiesAndTotalEquity&#39;: 382315000000,
+  &#39;totalInvestments&#39;: 96942000000,
+  &#39;totalDebt&#39;: 57419000000,
+  &#39;netDebt&#39;: 40918000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/0000713676-19-000015-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/pnc201810k.htm&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CFS_data</span> <span class="o">=</span> <span class="n">CFS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">CFS_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;date&#39;: &#39;2022-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2023-02-22&#39;,
+  &#39;acceptedDate&#39;: &#39;2023-02-22 16:06:13&#39;,
+  &#39;calendarYear&#39;: &#39;2022&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;netIncome&#39;: 6113000000,
+  &#39;depreciationAndAmortization&#39;: 651000000,
+  &#39;deferredIncomeTax&#39;: 351000000,
+  &#39;stockBasedCompensation&#39;: 0,
+  &#39;changeInWorkingCapital&#39;: 653000000,
+  &#39;accountsReceivables&#39;: 0,
+  &#39;inventory&#39;: 0,
+  &#39;accountsPayables&#39;: 0,
+  &#39;otherWorkingCapital&#39;: 653000000,
+  &#39;otherNonCashItems&#39;: 1315000000,
+  &#39;netCashProvidedByOperatingActivities&#39;: 9083000000,
+  &#39;investmentsInPropertyPlantAndEquipment&#39;: 0,
+  &#39;acquisitionsNet&#39;: 0,
+  &#39;purchasesOfInvestments&#39;: -41005000000,
+  &#39;salesMaturitiesOfInvestments&#39;: 22576000000,
+  &#39;otherInvestingActivites&#39;: 5001000000,
+  &#39;netCashUsedForInvestingActivites&#39;: -13428000000,
+  &#39;debtRepayment&#39;: -8057000000,
+  &#39;commonStockIssued&#39;: 68000000,
+  &#39;commonStockRepurchased&#39;: -5231000000,
+  &#39;dividendsPaid&#39;: -2692000000,
+  &#39;otherFinancingActivites&#39;: 19296000000,
+  &#39;netCashUsedProvidedByFinancingActivities&#39;: 3384000000,
+  &#39;effectOfForexChangesOnCash&#39;: 0,
+  &#39;netChangeInCash&#39;: -961000000,
+  &#39;cashAtEndOfPeriod&#39;: 7043000000,
+  &#39;cashAtBeginningOfPeriod&#39;: 8004000000,
+  &#39;operatingCashFlow&#39;: 9083000000,
+  &#39;capitalExpenditure&#39;: 0,
+  &#39;freeCashFlow&#39;: 9083000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/0000713676-23-000020-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367623000020/pnc-20221231.htm&#39;},
+ {&#39;date&#39;: &#39;2021-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2022-02-25&#39;,
+  &#39;acceptedDate&#39;: &#39;2022-02-25 17:17:06&#39;,
+  &#39;calendarYear&#39;: &#39;2021&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;netIncome&#39;: 5725000000,
+  &#39;depreciationAndAmortization&#39;: 1773000000,
+  &#39;deferredIncomeTax&#39;: 178000000,
+  &#39;stockBasedCompensation&#39;: -843000000,
+  &#39;changeInWorkingCapital&#39;: 575000000,
+  &#39;accountsReceivables&#39;: 0,
+  &#39;inventory&#39;: 0,
+  &#39;accountsPayables&#39;: 0,
+  &#39;otherWorkingCapital&#39;: 575000000,
+  &#39;otherNonCashItems&#39;: -194000000,
+  &#39;netCashProvidedByOperatingActivities&#39;: 7214000000,
+  &#39;investmentsInPropertyPlantAndEquipment&#39;: 39780000000,
+  &#39;acquisitionsNet&#39;: -10511000000,
+  &#39;purchasesOfInvestments&#39;: -85583000000,
+  &#39;salesMaturitiesOfInvestments&#39;: 57151000000,
+  &#39;otherInvestingActivites&#39;: -3632000000,
+  &#39;netCashUsedForInvestingActivites&#39;: -2795000000,
+  &#39;debtRepayment&#39;: -10503000000,
+  &#39;commonStockIssued&#39;: 66000000,
+  &#39;commonStockRepurchased&#39;: -1079000000,
+  &#39;dividendsPaid&#39;: -2289000000,
+  &#39;otherFinancingActivites&#39;: 10373000000,
+  &#39;netCashUsedProvidedByFinancingActivities&#39;: -3432000000,
+  &#39;effectOfForexChangesOnCash&#39;: 0,
+  &#39;netChangeInCash&#39;: 987000000,
+  &#39;cashAtEndOfPeriod&#39;: 8004000000,
+  &#39;cashAtBeginningOfPeriod&#39;: 7017000000,
+  &#39;operatingCashFlow&#39;: 7214000000,
+  &#39;capitalExpenditure&#39;: 39780000000,
+  &#39;freeCashFlow&#39;: 46994000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/0000713676-22-000019-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367622000019/pnc-20211231.htm&#39;},
+ {&#39;date&#39;: &#39;2020-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2021-02-26&#39;,
+  &#39;acceptedDate&#39;: &#39;2021-02-26 13:29:49&#39;,
+  &#39;calendarYear&#39;: &#39;2020&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;netIncome&#39;: 7558000000,
+  &#39;depreciationAndAmortization&#39;: 1497000000,
+  &#39;deferredIncomeTax&#39;: -2239000000,
+  &#39;stockBasedCompensation&#39;: -3044000000,
+  &#39;changeInWorkingCapital&#39;: 203000000,
+  &#39;accountsReceivables&#39;: 0,
+  &#39;inventory&#39;: 0,
+  &#39;accountsPayables&#39;: 0,
+  &#39;otherWorkingCapital&#39;: 203000000,
+  &#39;otherNonCashItems&#39;: 684000000,
+  &#39;netCashProvidedByOperatingActivities&#39;: 4659000000,
+  &#39;investmentsInPropertyPlantAndEquipment&#39;: -63486000000,
+  &#39;acquisitionsNet&#39;: 14225000000,
+  &#39;purchasesOfInvestments&#39;: -45409000000,
+  &#39;salesMaturitiesOfInvestments&#39;: 44812000000,
+  &#39;otherInvestingActivites&#39;: -1264000000,
+  &#39;netCashUsedForInvestingActivites&#39;: -51122000000,
+  &#39;debtRepayment&#39;: -31587000000,
+  &#39;commonStockIssued&#39;: 65000000,
+  &#39;commonStockRepurchased&#39;: -2104000000,
+  &#39;dividendsPaid&#39;: -2209000000,
+  &#39;otherFinancingActivites&#39;: 84254000000,
+  &#39;netCashUsedProvidedByFinancingActivities&#39;: 48419000000,
+  &#39;effectOfForexChangesOnCash&#39;: 0,
+  &#39;netChangeInCash&#39;: 1956000000,
+  &#39;cashAtEndOfPeriod&#39;: 7017000000,
+  &#39;cashAtBeginningOfPeriod&#39;: 5061000000,
+  &#39;operatingCashFlow&#39;: 4659000000,
+  &#39;capitalExpenditure&#39;: -63486000000,
+  &#39;freeCashFlow&#39;: -58827000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/0000713676-21-000025-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367621000025/pnc-20201231.htm&#39;},
+ {&#39;date&#39;: &#39;2019-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2020-03-02&#39;,
+  &#39;acceptedDate&#39;: &#39;2020-02-28 19:05:36&#39;,
+  &#39;calendarYear&#39;: &#39;2019&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;netIncome&#39;: 5418000000,
+  &#39;depreciationAndAmortization&#39;: 1315000000,
+  &#39;deferredIncomeTax&#39;: 303000000,
+  &#39;stockBasedCompensation&#39;: 242000000,
+  &#39;changeInWorkingCapital&#39;: 426000000,
+  &#39;accountsReceivables&#39;: 0,
+  &#39;inventory&#39;: 0,
+  &#39;accountsPayables&#39;: 0,
+  &#39;otherWorkingCapital&#39;: 426000000,
+  &#39;otherNonCashItems&#39;: -341000000,
+  &#39;netCashProvidedByOperatingActivities&#39;: 7363000000,
+  &#39;investmentsInPropertyPlantAndEquipment&#39;: -21947000000,
+  &#39;acquisitionsNet&#39;: 75000000,
+  &#39;purchasesOfInvestments&#39;: -25490000000,
+  &#39;salesMaturitiesOfInvestments&#39;: 23077000000,
+  &#39;otherInvestingActivites&#39;: -705000000,
+  &#39;netCashUsedForInvestingActivites&#39;: -24990000000,
+  &#39;debtRepayment&#39;: -29969000000,
+  &#39;commonStockIssued&#39;: 90000000,
+  &#39;commonStockRepurchased&#39;: -3578000000,
+  &#39;dividendsPaid&#39;: -2131000000,
+  &#39;otherFinancingActivites&#39;: 52668000000,
+  &#39;netCashUsedProvidedByFinancingActivities&#39;: 17080000000,
+  &#39;effectOfForexChangesOnCash&#39;: 0,
+  &#39;netChangeInCash&#39;: -547000000,
+  &#39;cashAtEndOfPeriod&#39;: 5061000000,
+  &#39;cashAtBeginningOfPeriod&#39;: 5608000000,
+  &#39;operatingCashFlow&#39;: 7363000000,
+  &#39;capitalExpenditure&#39;: -21947000000,
+  &#39;freeCashFlow&#39;: -14584000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/0000713676-20-000042-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367620000042/pnc201910-k.htm&#39;},
+ {&#39;date&#39;: &#39;2018-12-31&#39;,
+  &#39;symbol&#39;: &#39;PNC&#39;,
+  &#39;reportedCurrency&#39;: &#39;USD&#39;,
+  &#39;cik&#39;: &#39;0000713676&#39;,
+  &#39;fillingDate&#39;: &#39;2019-03-01&#39;,
+  &#39;acceptedDate&#39;: &#39;2019-03-01 09:19:59&#39;,
+  &#39;calendarYear&#39;: &#39;2018&#39;,
+  &#39;period&#39;: &#39;FY&#39;,
+  &#39;netIncome&#39;: 5346000000,
+  &#39;depreciationAndAmortization&#39;: 1129000000,
+  &#39;deferredIncomeTax&#39;: 133000000,
+  &#39;stockBasedCompensation&#39;: -117000000,
+  &#39;changeInWorkingCapital&#39;: 1317000000,
+  &#39;accountsReceivables&#39;: 0,
+  &#39;inventory&#39;: 0,
+  &#39;accountsPayables&#39;: 0,
+  &#39;otherWorkingCapital&#39;: 1317000000,
+  &#39;otherNonCashItems&#39;: 32000000,
+  &#39;netCashProvidedByOperatingActivities&#39;: 7840000000,
+  &#39;investmentsInPropertyPlantAndEquipment&#39;: 0,
+  &#39;acquisitionsNet&#39;: 0,
+  &#39;purchasesOfInvestments&#39;: -26788000000,
+  &#39;salesMaturitiesOfInvestments&#39;: 19340000000,
+  &#39;otherInvestingActivites&#39;: 3479000000,
+  &#39;netCashUsedForInvestingActivites&#39;: -3969000000,
+  &#39;debtRepayment&#39;: -17934000000,
+  &#39;commonStockIssued&#39;: 69000000,
+  &#39;commonStockRepurchased&#39;: -2877000000,
+  &#39;dividendsPaid&#39;: -1837000000,
+  &#39;otherFinancingActivites&#39;: 19067000000,
+  &#39;netCashUsedProvidedByFinancingActivities&#39;: -3512000000,
+  &#39;effectOfForexChangesOnCash&#39;: 0,
+  &#39;netChangeInCash&#39;: 359000000,
+  &#39;cashAtEndOfPeriod&#39;: 5608000000,
+  &#39;cashAtBeginningOfPeriod&#39;: 5249000000,
+  &#39;operatingCashFlow&#39;: 7840000000,
+  &#39;capitalExpenditure&#39;: 0,
+  &#39;freeCashFlow&#39;: 7840000000,
+  &#39;link&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/0000713676-19-000015-index.htm&#39;,
+  &#39;finalLink&#39;: &#39;https://www.sec.gov/Archives/edgar/data/713676/000071367619000015/pnc201810k.htm&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-of-a-loop-run-a-loop-through-the-key-value-pairs">
+<h3>Example of a loop: run a loop through the key-value pairs.<a class="headerlink" href="#example-of-a-loop-run-a-loop-through-the-key-value-pairs" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">kv_pair</span> <span class="ow">in</span> <span class="n">IS_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The period ending for calendar year </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;calendarYear&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The period ending for calendar year 2022 is 2022-12-31.
+The period ending for calendar year 2021 is 2021-12-31.
+The period ending for calendar year 2020 is 2020-12-31.
+The period ending for calendar year 2019 is 2019-12-31.
+The period ending for calendar year 2018 is 2018-12-31.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">kv_pair</span> <span class="ow">in</span> <span class="n">BS_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The total inventory for the period ending </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The total inventory for the period ending 2022-12-31 is 0.
+The total inventory for the period ending 2021-12-31 is 0.
+The total inventory for the period ending 2020-12-31 is 0.
+The total inventory for the period ending 2019-12-31 is 0.
+The total inventory for the period ending 2018-12-31 is 0.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">kv_pair</span> <span class="ow">in</span> <span class="n">CFS_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The change in working capital for the year ending for </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">kv_pair</span><span class="p">[</span><span class="s2">&quot;changeInWorkingCapital&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The change in working capital for the year ending for 2022-12-31 is 653000000.
+The change in working capital for the year ending for 2021-12-31 is 575000000.
+The change in working capital for the year ending for 2020-12-31 is 203000000.
+The change in working capital for the year ending for 2019-12-31 is 426000000.
+The change in working capital for the year ending for 2018-12-31 is 1317000000.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verify-is-r-json-bs-r-json-and-cfs-r-json-are-dictionaries">
+<h3>Verify IS_r.json(), BS_r.json and CFS_r.json are dictionaries.<a class="headerlink" href="#verify-is-r-json-bs-r-json-and-cfs-r-json-are-dictionaries" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">IS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">CFS_r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-pandas-to-convert-is-r-bs-r-and-cfs-r-dictionaries-to-dataframes">
+<h3>Use Pandas to convert IS_r, BS_r and CFS_r Dictionaries to DataFrames.<a class="headerlink" href="#use-pandas-to-convert-is-r-bs-r-and-cfs-r-dictionaries-to-dataframes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">IS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>symbol</th>
+      <th>reportedCurrency</th>
+      <th>cik</th>
+      <th>fillingDate</th>
+      <th>acceptedDate</th>
+      <th>calendarYear</th>
+      <th>period</th>
+      <th>revenue</th>
+      <th>costOfRevenue</th>
+      <th>...</th>
+      <th>incomeBeforeTaxRatio</th>
+      <th>incomeTaxExpense</th>
+      <th>netIncome</th>
+      <th>netIncomeRatio</th>
+      <th>eps</th>
+      <th>epsdiluted</th>
+      <th>weightedAverageShsOut</th>
+      <th>weightedAverageShsOutDil</th>
+      <th>link</th>
+      <th>finalLink</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2023-02-22</td>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022</td>
+      <td>FY</td>
+      <td>21114000000</td>
+      <td>2387000000</td>
+      <td>...</td>
+      <td>0.353936</td>
+      <td>1360000000</td>
+      <td>6041000000</td>
+      <td>0.286113</td>
+      <td>13.43</td>
+      <td>13.43</td>
+      <td>427000000</td>
+      <td>427000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2022-02-25</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021</td>
+      <td>FY</td>
+      <td>19135000000</td>
+      <td>2351000000</td>
+      <td>...</td>
+      <td>0.365195</td>
+      <td>1263000000</td>
+      <td>5674000000</td>
+      <td>0.296525</td>
+      <td>12.71</td>
+      <td>12.70</td>
+      <td>426000000</td>
+      <td>426000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2021-02-26</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020</td>
+      <td>FY</td>
+      <td>16901000000</td>
+      <td>2002000000</td>
+      <td>...</td>
+      <td>0.202887</td>
+      <td>426000000</td>
+      <td>3003000000</td>
+      <td>0.177682</td>
+      <td>7.03</td>
+      <td>7.03</td>
+      <td>427000000</td>
+      <td>427000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2020-03-02</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019</td>
+      <td>FY</td>
+      <td>17827000000</td>
+      <td>2044000000</td>
+      <td>...</td>
+      <td>0.363494</td>
+      <td>1062000000</td>
+      <td>5369000000</td>
+      <td>0.301172</td>
+      <td>11.43</td>
+      <td>11.39</td>
+      <td>447000000</td>
+      <td>448000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2019-03-01</td>
+      <td>2019-03-01 09:19:59</td>
+      <td>2018</td>
+      <td>FY</td>
+      <td>17132000000</td>
+      <td>1921000000</td>
+      <td>...</td>
+      <td>0.375204</td>
+      <td>1082000000</td>
+      <td>5301000000</td>
+      <td>0.309421</td>
+      <td>11.35</td>
+      <td>11.28</td>
+      <td>467000000</td>
+      <td>470000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 38 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>symbol</th>
+      <th>reportedCurrency</th>
+      <th>cik</th>
+      <th>fillingDate</th>
+      <th>acceptedDate</th>
+      <th>calendarYear</th>
+      <th>period</th>
+      <th>cashAndCashEquivalents</th>
+      <th>shortTermInvestments</th>
+      <th>...</th>
+      <th>totalStockholdersEquity</th>
+      <th>totalEquity</th>
+      <th>totalLiabilitiesAndStockholdersEquity</th>
+      <th>minorityInterest</th>
+      <th>totalLiabilitiesAndTotalEquity</th>
+      <th>totalInvestments</th>
+      <th>totalDebt</th>
+      <th>netDebt</th>
+      <th>link</th>
+      <th>finalLink</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2023-02-22</td>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022</td>
+      <td>FY</td>
+      <td>34363000000</td>
+      <td>44159000000</td>
+      <td>...</td>
+      <td>45774000000</td>
+      <td>45774000000</td>
+      <td>557263000000</td>
+      <td>38000000</td>
+      <td>557263000000</td>
+      <td>278668000000</td>
+      <td>58713000000</td>
+      <td>24350000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2022-02-25</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021</td>
+      <td>FY</td>
+      <td>82254000000</td>
+      <td>131536000000</td>
+      <td>...</td>
+      <td>55695000000</td>
+      <td>55695000000</td>
+      <td>558448000000</td>
+      <td>31000000</td>
+      <td>558448000000</td>
+      <td>272678000000</td>
+      <td>30784000000</td>
+      <td>-51470000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2021-02-26</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020</td>
+      <td>FY</td>
+      <td>92190000000</td>
+      <td>87358000000</td>
+      <td>...</td>
+      <td>54010000000</td>
+      <td>54010000000</td>
+      <td>466679000000</td>
+      <td>31000000</td>
+      <td>466679000000</td>
+      <td>182209000000</td>
+      <td>37195000000</td>
+      <td>-54995000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2020-03-02</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019</td>
+      <td>FY</td>
+      <td>28474000000</td>
+      <td>69163000000</td>
+      <td>...</td>
+      <td>49314000000</td>
+      <td>49314000000</td>
+      <td>410295000000</td>
+      <td>29000000</td>
+      <td>410295000000</td>
+      <td>169721000000</td>
+      <td>60263000000</td>
+      <td>31789000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2019-03-01</td>
+      <td>2019-03-01 09:19:59</td>
+      <td>2018</td>
+      <td>FY</td>
+      <td>16501000000</td>
+      <td>63389000000</td>
+      <td>...</td>
+      <td>47728000000</td>
+      <td>47728000000</td>
+      <td>382315000000</td>
+      <td>42000000</td>
+      <td>382315000000</td>
+      <td>96942000000</td>
+      <td>57419000000</td>
+      <td>40918000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 54 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>symbol</th>
+      <th>reportedCurrency</th>
+      <th>cik</th>
+      <th>fillingDate</th>
+      <th>acceptedDate</th>
+      <th>calendarYear</th>
+      <th>period</th>
+      <th>cashAndCashEquivalents</th>
+      <th>shortTermInvestments</th>
+      <th>...</th>
+      <th>totalStockholdersEquity</th>
+      <th>totalEquity</th>
+      <th>totalLiabilitiesAndStockholdersEquity</th>
+      <th>minorityInterest</th>
+      <th>totalLiabilitiesAndTotalEquity</th>
+      <th>totalInvestments</th>
+      <th>totalDebt</th>
+      <th>netDebt</th>
+      <th>link</th>
+      <th>finalLink</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2023-02-22</td>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022</td>
+      <td>FY</td>
+      <td>34363000000</td>
+      <td>44159000000</td>
+      <td>...</td>
+      <td>45774000000</td>
+      <td>45774000000</td>
+      <td>557263000000</td>
+      <td>38000000</td>
+      <td>557263000000</td>
+      <td>278668000000</td>
+      <td>58713000000</td>
+      <td>24350000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2022-02-25</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021</td>
+      <td>FY</td>
+      <td>82254000000</td>
+      <td>131536000000</td>
+      <td>...</td>
+      <td>55695000000</td>
+      <td>55695000000</td>
+      <td>558448000000</td>
+      <td>31000000</td>
+      <td>558448000000</td>
+      <td>272678000000</td>
+      <td>30784000000</td>
+      <td>-51470000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2021-02-26</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020</td>
+      <td>FY</td>
+      <td>92190000000</td>
+      <td>87358000000</td>
+      <td>...</td>
+      <td>54010000000</td>
+      <td>54010000000</td>
+      <td>466679000000</td>
+      <td>31000000</td>
+      <td>466679000000</td>
+      <td>182209000000</td>
+      <td>37195000000</td>
+      <td>-54995000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2020-03-02</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019</td>
+      <td>FY</td>
+      <td>28474000000</td>
+      <td>69163000000</td>
+      <td>...</td>
+      <td>49314000000</td>
+      <td>49314000000</td>
+      <td>410295000000</td>
+      <td>29000000</td>
+      <td>410295000000</td>
+      <td>169721000000</td>
+      <td>60263000000</td>
+      <td>31789000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-12-31</td>
+      <td>PNC</td>
+      <td>USD</td>
+      <td>0000713676</td>
+      <td>2019-03-01</td>
+      <td>2019-03-01 09:19:59</td>
+      <td>2018</td>
+      <td>FY</td>
+      <td>16501000000</td>
+      <td>63389000000</td>
+      <td>...</td>
+      <td>47728000000</td>
+      <td>47728000000</td>
+      <td>382315000000</td>
+      <td>42000000</td>
+      <td>382315000000</td>
+      <td>96942000000</td>
+      <td>57419000000</td>
+      <td>40918000000</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 54 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="since-this-is-financial-data-for-is-r-bs-r-and-cfs-r-transpose-the-date-rows-to-columns">
+<h3>Since this is financial data, for IS_r, BS_r and CFS_r, transpose the date rows to columns.<a class="headerlink" href="#since-this-is-financial-data-for-is-r-bs-r-and-cfs-r-transpose-the-date-rows-to-columns" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">IS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>date</th>
+      <td>2022-12-31</td>
+      <td>2021-12-31</td>
+      <td>2020-12-31</td>
+      <td>2019-12-31</td>
+      <td>2018-12-31</td>
+    </tr>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>revenue</th>
+      <td>21114000000</td>
+      <td>19135000000</td>
+      <td>16901000000</td>
+      <td>17827000000</td>
+      <td>17132000000</td>
+    </tr>
+    <tr>
+      <th>costOfRevenue</th>
+      <td>2387000000</td>
+      <td>2351000000</td>
+      <td>2002000000</td>
+      <td>2044000000</td>
+      <td>1921000000</td>
+    </tr>
+    <tr>
+      <th>grossProfit</th>
+      <td>18727000000</td>
+      <td>16784000000</td>
+      <td>14899000000</td>
+      <td>15783000000</td>
+      <td>15211000000</td>
+    </tr>
+    <tr>
+      <th>grossProfitRatio</th>
+      <td>0.886947</td>
+      <td>0.877136</td>
+      <td>0.881545</td>
+      <td>0.885342</td>
+      <td>0.887871</td>
+    </tr>
+    <tr>
+      <th>researchAndDevelopmentExpenses</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>generalAndAdministrativeExpenses</th>
+      <td>7244000000</td>
+      <td>7141000000</td>
+      <td>5673000000</td>
+      <td>5647000000</td>
+      <td>5471000000</td>
+    </tr>
+    <tr>
+      <th>sellingAndMarketingExpenses</th>
+      <td>355000000</td>
+      <td>319000000</td>
+      <td>236000000</td>
+      <td>301000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>sellingGeneralAndAdministrativeExpenses</th>
+      <td>7599000000</td>
+      <td>7460000000</td>
+      <td>5909000000</td>
+      <td>5948000000</td>
+      <td>5756000000</td>
+    </tr>
+    <tr>
+      <th>otherExpenses</th>
+      <td>0</td>
+      <td>-19658000000</td>
+      <td>-14867000000</td>
+      <td>-17344000000</td>
+      <td>-13644000000</td>
+    </tr>
+    <tr>
+      <th>operatingExpenses</th>
+      <td>355000000</td>
+      <td>-12198000000</td>
+      <td>-8958000000</td>
+      <td>-11396000000</td>
+      <td>-7888000000</td>
+    </tr>
+    <tr>
+      <th>costAndExpenses</th>
+      <td>355000000</td>
+      <td>-12198000000</td>
+      <td>-8958000000</td>
+      <td>-11396000000</td>
+      <td>-7888000000</td>
+    </tr>
+    <tr>
+      <th>interestIncome</th>
+      <td>15436000000</td>
+      <td>11134000000</td>
+      <td>11307000000</td>
+      <td>13762000000</td>
+      <td>12582000000</td>
+    </tr>
+    <tr>
+      <th>interestExpense</th>
+      <td>2422000000</td>
+      <td>487000000</td>
+      <td>1361000000</td>
+      <td>3797000000</td>
+      <td>2861000000</td>
+    </tr>
+    <tr>
+      <th>depreciationAndAmortization</th>
+      <td>651000000</td>
+      <td>1773000000</td>
+      <td>1497000000</td>
+      <td>1315000000</td>
+      <td>1129000000</td>
+    </tr>
+    <tr>
+      <th>ebitda</th>
+      <td>10168000000</td>
+      <td>8710000000</td>
+      <td>9440000000</td>
+      <td>7746000000</td>
+      <td>10373000000</td>
+    </tr>
+    <tr>
+      <th>ebitdaratio</th>
+      <td>0.481576</td>
+      <td>0.455187</td>
+      <td>0.558547</td>
+      <td>0.434509</td>
+      <td>0.605475</td>
+    </tr>
+    <tr>
+      <th>operatingIncome</th>
+      <td>9517000000</td>
+      <td>6937000000</td>
+      <td>7943000000</td>
+      <td>6431000000</td>
+      <td>9244000000</td>
+    </tr>
+    <tr>
+      <th>operatingIncomeRatio</th>
+      <td>0.450744</td>
+      <td>0.362529</td>
+      <td>0.469972</td>
+      <td>0.360745</td>
+      <td>0.539575</td>
+    </tr>
+    <tr>
+      <th>totalOtherIncomeExpensesNet</th>
+      <td>-2044000000</td>
+      <td>51000000</td>
+      <td>-4514000000</td>
+      <td>49000000</td>
+      <td>-2816000000</td>
+    </tr>
+    <tr>
+      <th>incomeBeforeTax</th>
+      <td>7473000000</td>
+      <td>6988000000</td>
+      <td>3429000000</td>
+      <td>6480000000</td>
+      <td>6428000000</td>
+    </tr>
+    <tr>
+      <th>incomeBeforeTaxRatio</th>
+      <td>0.353936</td>
+      <td>0.365195</td>
+      <td>0.202887</td>
+      <td>0.363494</td>
+      <td>0.375204</td>
+    </tr>
+    <tr>
+      <th>incomeTaxExpense</th>
+      <td>1360000000</td>
+      <td>1263000000</td>
+      <td>426000000</td>
+      <td>1062000000</td>
+      <td>1082000000</td>
+    </tr>
+    <tr>
+      <th>netIncome</th>
+      <td>6041000000</td>
+      <td>5674000000</td>
+      <td>3003000000</td>
+      <td>5369000000</td>
+      <td>5301000000</td>
+    </tr>
+    <tr>
+      <th>netIncomeRatio</th>
+      <td>0.286113</td>
+      <td>0.296525</td>
+      <td>0.177682</td>
+      <td>0.301172</td>
+      <td>0.309421</td>
+    </tr>
+    <tr>
+      <th>eps</th>
+      <td>13.43</td>
+      <td>12.71</td>
+      <td>7.03</td>
+      <td>11.43</td>
+      <td>11.35</td>
+    </tr>
+    <tr>
+      <th>epsdiluted</th>
+      <td>13.43</td>
+      <td>12.7</td>
+      <td>7.03</td>
+      <td>11.39</td>
+      <td>11.28</td>
+    </tr>
+    <tr>
+      <th>weightedAverageShsOut</th>
+      <td>427000000</td>
+      <td>426000000</td>
+      <td>427000000</td>
+      <td>447000000</td>
+      <td>467000000</td>
+    </tr>
+    <tr>
+      <th>weightedAverageShsOutDil</th>
+      <td>427000000</td>
+      <td>426000000</td>
+      <td>427000000</td>
+      <td>448000000</td>
+      <td>470000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>date</th>
+      <td>2022-12-31</td>
+      <td>2021-12-31</td>
+      <td>2020-12-31</td>
+      <td>2019-12-31</td>
+      <td>2018-12-31</td>
+    </tr>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>cashAndCashEquivalents</th>
+      <td>34363000000</td>
+      <td>82254000000</td>
+      <td>92190000000</td>
+      <td>28474000000</td>
+      <td>16501000000</td>
+    </tr>
+    <tr>
+      <th>shortTermInvestments</th>
+      <td>44159000000</td>
+      <td>131536000000</td>
+      <td>87358000000</td>
+      <td>69163000000</td>
+      <td>63389000000</td>
+    </tr>
+    <tr>
+      <th>cashAndShortTermInvestments</th>
+      <td>146377000000</td>
+      <td>213790000000</td>
+      <td>179548000000</td>
+      <td>97637000000</td>
+      <td>17848000000</td>
+    </tr>
+    <tr>
+      <th>netReceivables</th>
+      <td>6404000000</td>
+      <td>6040000000</td>
+      <td>6414000000</td>
+      <td>7155000000</td>
+      <td>7308000000</td>
+    </tr>
+    <tr>
+      <th>inventory</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherCurrentAssets</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalCurrentAssets</th>
+      <td>146377000000</td>
+      <td>219830000000</td>
+      <td>185962000000</td>
+      <td>104792000000</td>
+      <td>25114000000</td>
+    </tr>
+    <tr>
+      <th>propertyPlantEquipmentNet</th>
+      <td>0</td>
+      <td>1919000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>goodwill</th>
+      <td>10987000000</td>
+      <td>10916000000</td>
+      <td>9233000000</td>
+      <td>9233000000</td>
+      <td>9218000000</td>
+    </tr>
+    <tr>
+      <th>intangibleAssets</th>
+      <td>3423000000</td>
+      <td>1818000000</td>
+      <td>1242000000</td>
+      <td>1644000000</td>
+      <td>1983000000</td>
+    </tr>
+    <tr>
+      <th>goodwillAndIntangibleAssets</th>
+      <td>14410000000</td>
+      <td>12734000000</td>
+      <td>10475000000</td>
+      <td>10877000000</td>
+      <td>11201000000</td>
+    </tr>
+    <tr>
+      <th>longTermInvestments</th>
+      <td>147771000000</td>
+      <td>141142000000</td>
+      <td>94851000000</td>
+      <td>100558000000</td>
+      <td>95595000000</td>
+    </tr>
+    <tr>
+      <th>taxAssets</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherNonCurrentAssets</th>
+      <td>-11860000000</td>
+      <td>-155795000000</td>
+      <td>-105326000000</td>
+      <td>-111435000000</td>
+      <td>-106796000000</td>
+    </tr>
+    <tr>
+      <th>totalNonCurrentAssets</th>
+      <td>150321000000</td>
+      <td>155795000000</td>
+      <td>105326000000</td>
+      <td>111435000000</td>
+      <td>106796000000</td>
+    </tr>
+    <tr>
+      <th>otherAssets</th>
+      <td>260565000000</td>
+      <td>182823000000</td>
+      <td>175391000000</td>
+      <td>194068000000</td>
+      <td>250405000000</td>
+    </tr>
+    <tr>
+      <th>totalAssets</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>accountPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>shortTermDebt</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>318000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>taxPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>deferredRevenue</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherCurrentLiabilities</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-318000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalCurrentLiabilities</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>318000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>longTermDebt</th>
+      <td>58713000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>deferredRevenueNonCurrent</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>deferredTaxLiabilitiesNonCurrent</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherNonCurrentLiabilities</th>
+      <td>-58713000000</td>
+      <td>-30784000000</td>
+      <td>-37195000000</td>
+      <td>-60263000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalNonCurrentLiabilities</th>
+      <td>511451000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>otherLiabilities</th>
+      <td>511451000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>300371000000</td>
+      <td>276841000000</td>
+    </tr>
+    <tr>
+      <th>capitalLeaseObligations</th>
+      <td>0</td>
+      <td>2220000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalLiabilities</th>
+      <td>511451000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>360952000000</td>
+      <td>334545000000</td>
+    </tr>
+    <tr>
+      <th>preferredStock</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>commonStock</th>
+      <td>2714000000</td>
+      <td>2713000000</td>
+      <td>2713000000</td>
+      <td>2712000000</td>
+      <td>2711000000</td>
+    </tr>
+    <tr>
+      <th>retainedEarnings</th>
+      <td>53572000000</td>
+      <td>50228000000</td>
+      <td>46848000000</td>
+      <td>42215000000</td>
+      <td>38919000000</td>
+    </tr>
+    <tr>
+      <th>accumulatedOtherComprehensiveIncomeLoss</th>
+      <td>-10172000000</td>
+      <td>409000000</td>
+      <td>2770000000</td>
+      <td>799000000</td>
+      <td>-725000000</td>
+    </tr>
+    <tr>
+      <th>othertotalStockholdersEquity</th>
+      <td>-340000000</td>
+      <td>2345000000</td>
+      <td>1679000000</td>
+      <td>3588000000</td>
+      <td>6823000000</td>
+    </tr>
+    <tr>
+      <th>totalStockholdersEquity</th>
+      <td>45774000000</td>
+      <td>55695000000</td>
+      <td>54010000000</td>
+      <td>49314000000</td>
+      <td>47728000000</td>
+    </tr>
+    <tr>
+      <th>totalEquity</th>
+      <td>45774000000</td>
+      <td>55695000000</td>
+      <td>54010000000</td>
+      <td>49314000000</td>
+      <td>47728000000</td>
+    </tr>
+    <tr>
+      <th>totalLiabilitiesAndStockholdersEquity</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>minorityInterest</th>
+      <td>38000000</td>
+      <td>31000000</td>
+      <td>31000000</td>
+      <td>29000000</td>
+      <td>42000000</td>
+    </tr>
+    <tr>
+      <th>totalLiabilitiesAndTotalEquity</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>totalInvestments</th>
+      <td>278668000000</td>
+      <td>272678000000</td>
+      <td>182209000000</td>
+      <td>169721000000</td>
+      <td>96942000000</td>
+    </tr>
+    <tr>
+      <th>totalDebt</th>
+      <td>58713000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>netDebt</th>
+      <td>24350000000</td>
+      <td>-51470000000</td>
+      <td>-54995000000</td>
+      <td>31789000000</td>
+      <td>40918000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">CFS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>date</th>
+      <td>2022-12-31</td>
+      <td>2021-12-31</td>
+      <td>2020-12-31</td>
+      <td>2019-12-31</td>
+      <td>2018-12-31</td>
+    </tr>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>netIncome</th>
+      <td>6113000000</td>
+      <td>5725000000</td>
+      <td>7558000000</td>
+      <td>5418000000</td>
+      <td>5346000000</td>
+    </tr>
+    <tr>
+      <th>depreciationAndAmortization</th>
+      <td>651000000</td>
+      <td>1773000000</td>
+      <td>1497000000</td>
+      <td>1315000000</td>
+      <td>1129000000</td>
+    </tr>
+    <tr>
+      <th>deferredIncomeTax</th>
+      <td>351000000</td>
+      <td>178000000</td>
+      <td>-2239000000</td>
+      <td>303000000</td>
+      <td>133000000</td>
+    </tr>
+    <tr>
+      <th>stockBasedCompensation</th>
+      <td>0</td>
+      <td>-843000000</td>
+      <td>-3044000000</td>
+      <td>242000000</td>
+      <td>-117000000</td>
+    </tr>
+    <tr>
+      <th>changeInWorkingCapital</th>
+      <td>653000000</td>
+      <td>575000000</td>
+      <td>203000000</td>
+      <td>426000000</td>
+      <td>1317000000</td>
+    </tr>
+    <tr>
+      <th>accountsReceivables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>inventory</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>accountsPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherWorkingCapital</th>
+      <td>653000000</td>
+      <td>575000000</td>
+      <td>203000000</td>
+      <td>426000000</td>
+      <td>1317000000</td>
+    </tr>
+    <tr>
+      <th>otherNonCashItems</th>
+      <td>1315000000</td>
+      <td>-194000000</td>
+      <td>684000000</td>
+      <td>-341000000</td>
+      <td>32000000</td>
+    </tr>
+    <tr>
+      <th>netCashProvidedByOperatingActivities</th>
+      <td>9083000000</td>
+      <td>7214000000</td>
+      <td>4659000000</td>
+      <td>7363000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>investmentsInPropertyPlantAndEquipment</th>
+      <td>0</td>
+      <td>39780000000</td>
+      <td>-63486000000</td>
+      <td>-21947000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>acquisitionsNet</th>
+      <td>0</td>
+      <td>-10511000000</td>
+      <td>14225000000</td>
+      <td>75000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>purchasesOfInvestments</th>
+      <td>-41005000000</td>
+      <td>-85583000000</td>
+      <td>-45409000000</td>
+      <td>-25490000000</td>
+      <td>-26788000000</td>
+    </tr>
+    <tr>
+      <th>salesMaturitiesOfInvestments</th>
+      <td>22576000000</td>
+      <td>57151000000</td>
+      <td>44812000000</td>
+      <td>23077000000</td>
+      <td>19340000000</td>
+    </tr>
+    <tr>
+      <th>otherInvestingActivites</th>
+      <td>5001000000</td>
+      <td>-3632000000</td>
+      <td>-1264000000</td>
+      <td>-705000000</td>
+      <td>3479000000</td>
+    </tr>
+    <tr>
+      <th>netCashUsedForInvestingActivites</th>
+      <td>-13428000000</td>
+      <td>-2795000000</td>
+      <td>-51122000000</td>
+      <td>-24990000000</td>
+      <td>-3969000000</td>
+    </tr>
+    <tr>
+      <th>debtRepayment</th>
+      <td>-8057000000</td>
+      <td>-10503000000</td>
+      <td>-31587000000</td>
+      <td>-29969000000</td>
+      <td>-17934000000</td>
+    </tr>
+    <tr>
+      <th>commonStockIssued</th>
+      <td>68000000</td>
+      <td>66000000</td>
+      <td>65000000</td>
+      <td>90000000</td>
+      <td>69000000</td>
+    </tr>
+    <tr>
+      <th>commonStockRepurchased</th>
+      <td>-5231000000</td>
+      <td>-1079000000</td>
+      <td>-2104000000</td>
+      <td>-3578000000</td>
+      <td>-2877000000</td>
+    </tr>
+    <tr>
+      <th>dividendsPaid</th>
+      <td>-2692000000</td>
+      <td>-2289000000</td>
+      <td>-2209000000</td>
+      <td>-2131000000</td>
+      <td>-1837000000</td>
+    </tr>
+    <tr>
+      <th>otherFinancingActivites</th>
+      <td>19296000000</td>
+      <td>10373000000</td>
+      <td>84254000000</td>
+      <td>52668000000</td>
+      <td>19067000000</td>
+    </tr>
+    <tr>
+      <th>netCashUsedProvidedByFinancingActivities</th>
+      <td>3384000000</td>
+      <td>-3432000000</td>
+      <td>48419000000</td>
+      <td>17080000000</td>
+      <td>-3512000000</td>
+    </tr>
+    <tr>
+      <th>effectOfForexChangesOnCash</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>netChangeInCash</th>
+      <td>-961000000</td>
+      <td>987000000</td>
+      <td>1956000000</td>
+      <td>-547000000</td>
+      <td>359000000</td>
+    </tr>
+    <tr>
+      <th>cashAtEndOfPeriod</th>
+      <td>7043000000</td>
+      <td>8004000000</td>
+      <td>7017000000</td>
+      <td>5061000000</td>
+      <td>5608000000</td>
+    </tr>
+    <tr>
+      <th>cashAtBeginningOfPeriod</th>
+      <td>8004000000</td>
+      <td>7017000000</td>
+      <td>5061000000</td>
+      <td>5608000000</td>
+      <td>5249000000</td>
+    </tr>
+    <tr>
+      <th>operatingCashFlow</th>
+      <td>9083000000</td>
+      <td>7214000000</td>
+      <td>4659000000</td>
+      <td>7363000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>capitalExpenditure</th>
+      <td>0</td>
+      <td>39780000000</td>
+      <td>-63486000000</td>
+      <td>-21947000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>freeCashFlow</th>
+      <td>9083000000</td>
+      <td>46994000000</td>
+      <td>-58827000000</td>
+      <td>-14584000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="when-transposing-the-header-columns-will-show-their-column-index-positions-therefore-the-column-header-names-need-to-replace-the-column-index-positions">
+<h3>When transposing, the header columns will show their column index positions. Therefore, the column header names need to replace the column index positions.<a class="headerlink" href="#when-transposing-the-header-columns-will-show-their-column-index-positions-therefore-the-column-header-names-need-to-replace-the-column-index-positions" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To show dates as column headers, the date rows have to be shifted to column headers. </span>
+<span class="c1"># First, assign the data frame into an object.</span>
+<span class="n">IS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">IS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="c1"># Then assign the &quot;date&quot; first row index positions (which is zero) in the dataframe and assign as column headers </span>
+<span class="c1"># (replacing the 0,1,2,3, etc. column headers).</span>
+<span class="n">IS</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">IS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Although the first row is now assigned as column headers, the first row did not disappear. Therefore, when calling the</span>
+<span class="c1"># dataframe, just ignore the first row by displaying the second row of data onward.</span>
+<span class="n">IS</span> <span class="o">=</span> <span class="n">IS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">IS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>date</th>
+      <th>2022-12-31</th>
+      <th>2021-12-31</th>
+      <th>2020-12-31</th>
+      <th>2019-12-31</th>
+      <th>2018-12-31</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>revenue</th>
+      <td>21114000000</td>
+      <td>19135000000</td>
+      <td>16901000000</td>
+      <td>17827000000</td>
+      <td>17132000000</td>
+    </tr>
+    <tr>
+      <th>costOfRevenue</th>
+      <td>2387000000</td>
+      <td>2351000000</td>
+      <td>2002000000</td>
+      <td>2044000000</td>
+      <td>1921000000</td>
+    </tr>
+    <tr>
+      <th>grossProfit</th>
+      <td>18727000000</td>
+      <td>16784000000</td>
+      <td>14899000000</td>
+      <td>15783000000</td>
+      <td>15211000000</td>
+    </tr>
+    <tr>
+      <th>grossProfitRatio</th>
+      <td>0.886947</td>
+      <td>0.877136</td>
+      <td>0.881545</td>
+      <td>0.885342</td>
+      <td>0.887871</td>
+    </tr>
+    <tr>
+      <th>researchAndDevelopmentExpenses</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>generalAndAdministrativeExpenses</th>
+      <td>7244000000</td>
+      <td>7141000000</td>
+      <td>5673000000</td>
+      <td>5647000000</td>
+      <td>5471000000</td>
+    </tr>
+    <tr>
+      <th>sellingAndMarketingExpenses</th>
+      <td>355000000</td>
+      <td>319000000</td>
+      <td>236000000</td>
+      <td>301000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>sellingGeneralAndAdministrativeExpenses</th>
+      <td>7599000000</td>
+      <td>7460000000</td>
+      <td>5909000000</td>
+      <td>5948000000</td>
+      <td>5756000000</td>
+    </tr>
+    <tr>
+      <th>otherExpenses</th>
+      <td>0</td>
+      <td>-19658000000</td>
+      <td>-14867000000</td>
+      <td>-17344000000</td>
+      <td>-13644000000</td>
+    </tr>
+    <tr>
+      <th>operatingExpenses</th>
+      <td>355000000</td>
+      <td>-12198000000</td>
+      <td>-8958000000</td>
+      <td>-11396000000</td>
+      <td>-7888000000</td>
+    </tr>
+    <tr>
+      <th>costAndExpenses</th>
+      <td>355000000</td>
+      <td>-12198000000</td>
+      <td>-8958000000</td>
+      <td>-11396000000</td>
+      <td>-7888000000</td>
+    </tr>
+    <tr>
+      <th>interestIncome</th>
+      <td>15436000000</td>
+      <td>11134000000</td>
+      <td>11307000000</td>
+      <td>13762000000</td>
+      <td>12582000000</td>
+    </tr>
+    <tr>
+      <th>interestExpense</th>
+      <td>2422000000</td>
+      <td>487000000</td>
+      <td>1361000000</td>
+      <td>3797000000</td>
+      <td>2861000000</td>
+    </tr>
+    <tr>
+      <th>depreciationAndAmortization</th>
+      <td>651000000</td>
+      <td>1773000000</td>
+      <td>1497000000</td>
+      <td>1315000000</td>
+      <td>1129000000</td>
+    </tr>
+    <tr>
+      <th>ebitda</th>
+      <td>10168000000</td>
+      <td>8710000000</td>
+      <td>9440000000</td>
+      <td>7746000000</td>
+      <td>10373000000</td>
+    </tr>
+    <tr>
+      <th>ebitdaratio</th>
+      <td>0.481576</td>
+      <td>0.455187</td>
+      <td>0.558547</td>
+      <td>0.434509</td>
+      <td>0.605475</td>
+    </tr>
+    <tr>
+      <th>operatingIncome</th>
+      <td>9517000000</td>
+      <td>6937000000</td>
+      <td>7943000000</td>
+      <td>6431000000</td>
+      <td>9244000000</td>
+    </tr>
+    <tr>
+      <th>operatingIncomeRatio</th>
+      <td>0.450744</td>
+      <td>0.362529</td>
+      <td>0.469972</td>
+      <td>0.360745</td>
+      <td>0.539575</td>
+    </tr>
+    <tr>
+      <th>totalOtherIncomeExpensesNet</th>
+      <td>-2044000000</td>
+      <td>51000000</td>
+      <td>-4514000000</td>
+      <td>49000000</td>
+      <td>-2816000000</td>
+    </tr>
+    <tr>
+      <th>incomeBeforeTax</th>
+      <td>7473000000</td>
+      <td>6988000000</td>
+      <td>3429000000</td>
+      <td>6480000000</td>
+      <td>6428000000</td>
+    </tr>
+    <tr>
+      <th>incomeBeforeTaxRatio</th>
+      <td>0.353936</td>
+      <td>0.365195</td>
+      <td>0.202887</td>
+      <td>0.363494</td>
+      <td>0.375204</td>
+    </tr>
+    <tr>
+      <th>incomeTaxExpense</th>
+      <td>1360000000</td>
+      <td>1263000000</td>
+      <td>426000000</td>
+      <td>1062000000</td>
+      <td>1082000000</td>
+    </tr>
+    <tr>
+      <th>netIncome</th>
+      <td>6041000000</td>
+      <td>5674000000</td>
+      <td>3003000000</td>
+      <td>5369000000</td>
+      <td>5301000000</td>
+    </tr>
+    <tr>
+      <th>netIncomeRatio</th>
+      <td>0.286113</td>
+      <td>0.296525</td>
+      <td>0.177682</td>
+      <td>0.301172</td>
+      <td>0.309421</td>
+    </tr>
+    <tr>
+      <th>eps</th>
+      <td>13.43</td>
+      <td>12.71</td>
+      <td>7.03</td>
+      <td>11.43</td>
+      <td>11.35</td>
+    </tr>
+    <tr>
+      <th>epsdiluted</th>
+      <td>13.43</td>
+      <td>12.7</td>
+      <td>7.03</td>
+      <td>11.39</td>
+      <td>11.28</td>
+    </tr>
+    <tr>
+      <th>weightedAverageShsOut</th>
+      <td>427000000</td>
+      <td>426000000</td>
+      <td>427000000</td>
+      <td>447000000</td>
+      <td>467000000</td>
+    </tr>
+    <tr>
+      <th>weightedAverageShsOutDil</th>
+      <td>427000000</td>
+      <td>426000000</td>
+      <td>427000000</td>
+      <td>448000000</td>
+      <td>470000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create headers for the Balance Sheet:</span>
+<span class="n">BS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">BS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">BS</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">BS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">BS</span> <span class="o">=</span> <span class="n">BS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">BS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>date</th>
+      <th>2022-12-31</th>
+      <th>2021-12-31</th>
+      <th>2020-12-31</th>
+      <th>2019-12-31</th>
+      <th>2018-12-31</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>cashAndCashEquivalents</th>
+      <td>34363000000</td>
+      <td>82254000000</td>
+      <td>92190000000</td>
+      <td>28474000000</td>
+      <td>16501000000</td>
+    </tr>
+    <tr>
+      <th>shortTermInvestments</th>
+      <td>44159000000</td>
+      <td>131536000000</td>
+      <td>87358000000</td>
+      <td>69163000000</td>
+      <td>63389000000</td>
+    </tr>
+    <tr>
+      <th>cashAndShortTermInvestments</th>
+      <td>146377000000</td>
+      <td>213790000000</td>
+      <td>179548000000</td>
+      <td>97637000000</td>
+      <td>17848000000</td>
+    </tr>
+    <tr>
+      <th>netReceivables</th>
+      <td>6404000000</td>
+      <td>6040000000</td>
+      <td>6414000000</td>
+      <td>7155000000</td>
+      <td>7308000000</td>
+    </tr>
+    <tr>
+      <th>inventory</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherCurrentAssets</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalCurrentAssets</th>
+      <td>146377000000</td>
+      <td>219830000000</td>
+      <td>185962000000</td>
+      <td>104792000000</td>
+      <td>25114000000</td>
+    </tr>
+    <tr>
+      <th>propertyPlantEquipmentNet</th>
+      <td>0</td>
+      <td>1919000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>goodwill</th>
+      <td>10987000000</td>
+      <td>10916000000</td>
+      <td>9233000000</td>
+      <td>9233000000</td>
+      <td>9218000000</td>
+    </tr>
+    <tr>
+      <th>intangibleAssets</th>
+      <td>3423000000</td>
+      <td>1818000000</td>
+      <td>1242000000</td>
+      <td>1644000000</td>
+      <td>1983000000</td>
+    </tr>
+    <tr>
+      <th>goodwillAndIntangibleAssets</th>
+      <td>14410000000</td>
+      <td>12734000000</td>
+      <td>10475000000</td>
+      <td>10877000000</td>
+      <td>11201000000</td>
+    </tr>
+    <tr>
+      <th>longTermInvestments</th>
+      <td>147771000000</td>
+      <td>141142000000</td>
+      <td>94851000000</td>
+      <td>100558000000</td>
+      <td>95595000000</td>
+    </tr>
+    <tr>
+      <th>taxAssets</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherNonCurrentAssets</th>
+      <td>-11860000000</td>
+      <td>-155795000000</td>
+      <td>-105326000000</td>
+      <td>-111435000000</td>
+      <td>-106796000000</td>
+    </tr>
+    <tr>
+      <th>totalNonCurrentAssets</th>
+      <td>150321000000</td>
+      <td>155795000000</td>
+      <td>105326000000</td>
+      <td>111435000000</td>
+      <td>106796000000</td>
+    </tr>
+    <tr>
+      <th>otherAssets</th>
+      <td>260565000000</td>
+      <td>182823000000</td>
+      <td>175391000000</td>
+      <td>194068000000</td>
+      <td>250405000000</td>
+    </tr>
+    <tr>
+      <th>totalAssets</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>accountPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>shortTermDebt</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>318000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>taxPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>deferredRevenue</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherCurrentLiabilities</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-318000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalCurrentLiabilities</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>318000000</td>
+      <td>285000000</td>
+    </tr>
+    <tr>
+      <th>longTermDebt</th>
+      <td>58713000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>deferredRevenueNonCurrent</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>deferredTaxLiabilitiesNonCurrent</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherNonCurrentLiabilities</th>
+      <td>-58713000000</td>
+      <td>-30784000000</td>
+      <td>-37195000000</td>
+      <td>-60263000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalNonCurrentLiabilities</th>
+      <td>511451000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>otherLiabilities</th>
+      <td>511451000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>300371000000</td>
+      <td>276841000000</td>
+    </tr>
+    <tr>
+      <th>capitalLeaseObligations</th>
+      <td>0</td>
+      <td>2220000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>totalLiabilities</th>
+      <td>511451000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>360952000000</td>
+      <td>334545000000</td>
+    </tr>
+    <tr>
+      <th>preferredStock</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>commonStock</th>
+      <td>2714000000</td>
+      <td>2713000000</td>
+      <td>2713000000</td>
+      <td>2712000000</td>
+      <td>2711000000</td>
+    </tr>
+    <tr>
+      <th>retainedEarnings</th>
+      <td>53572000000</td>
+      <td>50228000000</td>
+      <td>46848000000</td>
+      <td>42215000000</td>
+      <td>38919000000</td>
+    </tr>
+    <tr>
+      <th>accumulatedOtherComprehensiveIncomeLoss</th>
+      <td>-10172000000</td>
+      <td>409000000</td>
+      <td>2770000000</td>
+      <td>799000000</td>
+      <td>-725000000</td>
+    </tr>
+    <tr>
+      <th>othertotalStockholdersEquity</th>
+      <td>-340000000</td>
+      <td>2345000000</td>
+      <td>1679000000</td>
+      <td>3588000000</td>
+      <td>6823000000</td>
+    </tr>
+    <tr>
+      <th>totalStockholdersEquity</th>
+      <td>45774000000</td>
+      <td>55695000000</td>
+      <td>54010000000</td>
+      <td>49314000000</td>
+      <td>47728000000</td>
+    </tr>
+    <tr>
+      <th>totalEquity</th>
+      <td>45774000000</td>
+      <td>55695000000</td>
+      <td>54010000000</td>
+      <td>49314000000</td>
+      <td>47728000000</td>
+    </tr>
+    <tr>
+      <th>totalLiabilitiesAndStockholdersEquity</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>minorityInterest</th>
+      <td>38000000</td>
+      <td>31000000</td>
+      <td>31000000</td>
+      <td>29000000</td>
+      <td>42000000</td>
+    </tr>
+    <tr>
+      <th>totalLiabilitiesAndTotalEquity</th>
+      <td>557263000000</td>
+      <td>558448000000</td>
+      <td>466679000000</td>
+      <td>410295000000</td>
+      <td>382315000000</td>
+    </tr>
+    <tr>
+      <th>totalInvestments</th>
+      <td>278668000000</td>
+      <td>272678000000</td>
+      <td>182209000000</td>
+      <td>169721000000</td>
+      <td>96942000000</td>
+    </tr>
+    <tr>
+      <th>totalDebt</th>
+      <td>58713000000</td>
+      <td>30784000000</td>
+      <td>37195000000</td>
+      <td>60263000000</td>
+      <td>57419000000</td>
+    </tr>
+    <tr>
+      <th>netDebt</th>
+      <td>24350000000</td>
+      <td>-51470000000</td>
+      <td>-54995000000</td>
+      <td>31789000000</td>
+      <td>40918000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create headers for the Cash Flow Statement:</span>
+<span class="n">CFS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">CFS_r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">CFS</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">CFS</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">CFS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>date</th>
+      <th>2022-12-31</th>
+      <th>2021-12-31</th>
+      <th>2020-12-31</th>
+      <th>2019-12-31</th>
+      <th>2018-12-31</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>symbol</th>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+      <td>PNC</td>
+    </tr>
+    <tr>
+      <th>reportedCurrency</th>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <th>cik</th>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+      <td>0000713676</td>
+    </tr>
+    <tr>
+      <th>fillingDate</th>
+      <td>2023-02-22</td>
+      <td>2022-02-25</td>
+      <td>2021-02-26</td>
+      <td>2020-03-02</td>
+      <td>2019-03-01</td>
+    </tr>
+    <tr>
+      <th>acceptedDate</th>
+      <td>2023-02-22 16:06:13</td>
+      <td>2022-02-25 17:17:06</td>
+      <td>2021-02-26 13:29:49</td>
+      <td>2020-02-28 19:05:36</td>
+      <td>2019-03-01 09:19:59</td>
+    </tr>
+    <tr>
+      <th>calendarYear</th>
+      <td>2022</td>
+      <td>2021</td>
+      <td>2020</td>
+      <td>2019</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+      <td>FY</td>
+    </tr>
+    <tr>
+      <th>netIncome</th>
+      <td>6113000000</td>
+      <td>5725000000</td>
+      <td>7558000000</td>
+      <td>5418000000</td>
+      <td>5346000000</td>
+    </tr>
+    <tr>
+      <th>depreciationAndAmortization</th>
+      <td>651000000</td>
+      <td>1773000000</td>
+      <td>1497000000</td>
+      <td>1315000000</td>
+      <td>1129000000</td>
+    </tr>
+    <tr>
+      <th>deferredIncomeTax</th>
+      <td>351000000</td>
+      <td>178000000</td>
+      <td>-2239000000</td>
+      <td>303000000</td>
+      <td>133000000</td>
+    </tr>
+    <tr>
+      <th>stockBasedCompensation</th>
+      <td>0</td>
+      <td>-843000000</td>
+      <td>-3044000000</td>
+      <td>242000000</td>
+      <td>-117000000</td>
+    </tr>
+    <tr>
+      <th>changeInWorkingCapital</th>
+      <td>653000000</td>
+      <td>575000000</td>
+      <td>203000000</td>
+      <td>426000000</td>
+      <td>1317000000</td>
+    </tr>
+    <tr>
+      <th>accountsReceivables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>inventory</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>accountsPayables</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>otherWorkingCapital</th>
+      <td>653000000</td>
+      <td>575000000</td>
+      <td>203000000</td>
+      <td>426000000</td>
+      <td>1317000000</td>
+    </tr>
+    <tr>
+      <th>otherNonCashItems</th>
+      <td>1315000000</td>
+      <td>-194000000</td>
+      <td>684000000</td>
+      <td>-341000000</td>
+      <td>32000000</td>
+    </tr>
+    <tr>
+      <th>netCashProvidedByOperatingActivities</th>
+      <td>9083000000</td>
+      <td>7214000000</td>
+      <td>4659000000</td>
+      <td>7363000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>investmentsInPropertyPlantAndEquipment</th>
+      <td>0</td>
+      <td>39780000000</td>
+      <td>-63486000000</td>
+      <td>-21947000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>acquisitionsNet</th>
+      <td>0</td>
+      <td>-10511000000</td>
+      <td>14225000000</td>
+      <td>75000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>purchasesOfInvestments</th>
+      <td>-41005000000</td>
+      <td>-85583000000</td>
+      <td>-45409000000</td>
+      <td>-25490000000</td>
+      <td>-26788000000</td>
+    </tr>
+    <tr>
+      <th>salesMaturitiesOfInvestments</th>
+      <td>22576000000</td>
+      <td>57151000000</td>
+      <td>44812000000</td>
+      <td>23077000000</td>
+      <td>19340000000</td>
+    </tr>
+    <tr>
+      <th>otherInvestingActivites</th>
+      <td>5001000000</td>
+      <td>-3632000000</td>
+      <td>-1264000000</td>
+      <td>-705000000</td>
+      <td>3479000000</td>
+    </tr>
+    <tr>
+      <th>netCashUsedForInvestingActivites</th>
+      <td>-13428000000</td>
+      <td>-2795000000</td>
+      <td>-51122000000</td>
+      <td>-24990000000</td>
+      <td>-3969000000</td>
+    </tr>
+    <tr>
+      <th>debtRepayment</th>
+      <td>-8057000000</td>
+      <td>-10503000000</td>
+      <td>-31587000000</td>
+      <td>-29969000000</td>
+      <td>-17934000000</td>
+    </tr>
+    <tr>
+      <th>commonStockIssued</th>
+      <td>68000000</td>
+      <td>66000000</td>
+      <td>65000000</td>
+      <td>90000000</td>
+      <td>69000000</td>
+    </tr>
+    <tr>
+      <th>commonStockRepurchased</th>
+      <td>-5231000000</td>
+      <td>-1079000000</td>
+      <td>-2104000000</td>
+      <td>-3578000000</td>
+      <td>-2877000000</td>
+    </tr>
+    <tr>
+      <th>dividendsPaid</th>
+      <td>-2692000000</td>
+      <td>-2289000000</td>
+      <td>-2209000000</td>
+      <td>-2131000000</td>
+      <td>-1837000000</td>
+    </tr>
+    <tr>
+      <th>otherFinancingActivites</th>
+      <td>19296000000</td>
+      <td>10373000000</td>
+      <td>84254000000</td>
+      <td>52668000000</td>
+      <td>19067000000</td>
+    </tr>
+    <tr>
+      <th>netCashUsedProvidedByFinancingActivities</th>
+      <td>3384000000</td>
+      <td>-3432000000</td>
+      <td>48419000000</td>
+      <td>17080000000</td>
+      <td>-3512000000</td>
+    </tr>
+    <tr>
+      <th>effectOfForexChangesOnCash</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>netChangeInCash</th>
+      <td>-961000000</td>
+      <td>987000000</td>
+      <td>1956000000</td>
+      <td>-547000000</td>
+      <td>359000000</td>
+    </tr>
+    <tr>
+      <th>cashAtEndOfPeriod</th>
+      <td>7043000000</td>
+      <td>8004000000</td>
+      <td>7017000000</td>
+      <td>5061000000</td>
+      <td>5608000000</td>
+    </tr>
+    <tr>
+      <th>cashAtBeginningOfPeriod</th>
+      <td>8004000000</td>
+      <td>7017000000</td>
+      <td>5061000000</td>
+      <td>5608000000</td>
+      <td>5249000000</td>
+    </tr>
+    <tr>
+      <th>operatingCashFlow</th>
+      <td>9083000000</td>
+      <td>7214000000</td>
+      <td>4659000000</td>
+      <td>7363000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>capitalExpenditure</th>
+      <td>0</td>
+      <td>39780000000</td>
+      <td>-63486000000</td>
+      <td>-21947000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>freeCashFlow</th>
+      <td>9083000000</td>
+      <td>46994000000</td>
+      <td>-58827000000</td>
+      <td>-14584000000</td>
+      <td>7840000000</td>
+    </tr>
+    <tr>
+      <th>link</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+    <tr>
+      <th>finalLink</th>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+      <td>https://www.sec.gov/Archives/edgar/data/713676...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="we-can-get-company-financial-ratios">
+<h3>We can get Company Financial Ratios:<a class="headerlink" href="#we-can-get-company-financial-ratios" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;https://financialmodelingprep.com/api/v3/&#39;</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="s1">&#39;ratios-ttm/&#39;</span>
+<span class="n">ticker</span> <span class="o">=</span> <span class="n">ticker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">period</span> <span class="o">=</span> <span class="s1">&#39;annual&#39;</span>
+<span class="c1"># Use requests package and use the get function to extract data from a given website by passing in values.</span>
+<span class="c1"># The URL is passed into the first open bracket using the format function.</span>
+<span class="n">ratios_r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">?period=</span><span class="si">{}</span><span class="s1">&amp;limit=</span><span class="si">{}</span><span class="s1">&amp;apikey=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">ratios</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratios_r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratios_data</span> <span class="o">=</span> <span class="n">ratios_r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">ratios_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dividendYielTTM&#39;: None,
+  &#39;dividendYielPercentageTTM&#39;: None,
+  &#39;peRatioTTM&#39;: 0,
+  &#39;pegRatioTTM&#39;: 0,
+  &#39;payoutRatioTTM&#39;: 0,
+  &#39;currentRatioTTM&#39;: 4.031111759272763,
+  &#39;quickRatioTTM&#39;: 3.7001604200087503,
+  &#39;cashRatioTTM&#39;: 2.2078610223571578,
+  &#39;daysOfSalesOutstandingTTM&#39;: 83.7166487593502,
+  &#39;daysOfInventoryOutstandingTTM&#39;: 0,
+  &#39;operatingCycleTTM&#39;: 20.64246133792197,
+  &#39;daysOfPayablesOutstandingTTM&#39;: 5.622195773405566,
+  &#39;cashConversionCycleTTM&#39;: 78.09445298594464,
+  &#39;grossProfitMarginTTM&#39;: 0.340701466854648,
+  &#39;operatingProfitMarginTTM&#39;: 1.0174200920090646,
+  &#39;pretaxProfitMarginTTM&#39;: -0.35395469903436844,
+  &#39;netProfitMarginTTM&#39;: -0.35341611603941064,
+  &#39;effectiveTaxRateTTM&#39;: 0.0015216156090796151,
+  &#39;returnOnAssetsTTM&#39;: -0.4444698805304196,
+  &#39;returnOnEquityTTM&#39;: -1.4665946187566925,
+  &#39;returnOnCapitalEmployedTTM&#39;: 1.5875520323049739,
+  &#39;netIncomePerEBTTTM&#39;: 0.9984783843909204,
+  &#39;ebtPerEbitTTM&#39;: -0.34789434749163073,
+  &#39;ebitPerRevenueTTM&#39;: 1.0174200920090646,
+  &#39;debtRatioTTM&#39;: 0.8690944696233116,
+  &#39;debtEquityRatioTTM&#39;: 1.7881685639057363,
+  &#39;longTermDebtToCapitalizationTTM&#39;: 0.6413416272798174,
+  &#39;totalDebtToCapitalizationTTM&#39;: 0.6413416272798174,
+  &#39;interestCoverageTTM&#39;: 50.873154934378725,
+  &#39;cashFlowToDebtRatioTTM&#39;: -0.7717882599427136,
+  &#39;companyEquityMultiplierTTM&#39;: 7.639096660946567,
+  &#39;receivablesTurnoverTTM&#39;: 4.359945189029483,
+  &#39;payablesTurnoverTTM&#39;: 64.92125402792696,
+  &#39;inventoryTurnoverTTM&#39;: 0,
+  &#39;fixedAssetTurnoverTTM&#39;: 12.564561169073684,
+  &#39;assetTurnoverTTM&#39;: 1.2576389710560205,
+  &#39;operatingCashFlowPerShareTTM&#39;: -0.8648481142026868,
+  &#39;freeCashFlowPerShareTTM&#39;: -1.011841386981452,
+  &#39;cashPerShareTTM&#39;: 2.055709929115857,
+  &#39;operatingCashFlowSalesRatioTTM&#39;: -0.14365099276526236,
+  &#39;freeCashFlowOperatingCashFlowRatioTTM&#39;: 1.1699642635103389,
+  &#39;cashFlowCoverageRatiosTTM&#39;: -0.7717882599427136,
+  &#39;shortTermCoverageRatiosTTM&#39;: 0,
+  &#39;capitalExpenditureCoverageRatioTTM&#39;: -5.883589757909139,
+  &#39;dividendPaidAndCapexCoverageRatioTTM&#39;: -5.883589757909139,
+  &#39;priceBookValueRatioTTM&#39;: 0,
+  &#39;priceToBookRatioTTM&#39;: 0,
+  &#39;priceToSalesRatioTTM&#39;: 0,
+  &#39;priceEarningsRatioTTM&#39;: 0,
+  &#39;priceToFreeCashFlowsRatioTTM&#39;: 0,
+  &#39;priceToOperatingCashFlowsRatioTTM&#39;: 0,
+  &#39;priceCashFlowRatioTTM&#39;: 0,
+  &#39;priceEarningsToGrowthRatioTTM&#39;: 0,
+  &#39;priceSalesRatioTTM&#39;: 0,
+  &#39;enterpriseValueMultipleTTM&#39;: 0.5307611582986259,
+  &#39;priceFairValueTTM&#39;: 0,
+  &#39;dividendPerShareTTM&#39;: 0}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="let-s-look-at-some-financial-ratios-and-practice-calculating-them">
+<h2>Let’s look at some financial ratios and practice calculating them.<a class="headerlink" href="#let-s-look-at-some-financial-ratios-and-practice-calculating-them" title="Permalink to this heading">#</a></h2>
+<p><strong>The Financial Modeling Prep website has a good page that displays many different financial ratios. It can be found at: <a class="reference external" href="https://site.financialmodelingprep.com/developer/docs/formula">https://site.financialmodelingprep.com/developer/docs/formula</a>.</strong></p>
+</section>
+<section id="current-ratio-calculation">
+<h2>Current Ratio Calculation<a class="headerlink" href="#current-ratio-calculation" title="Permalink to this heading">#</a></h2>
+<p><strong>This example uses just one financial statement: the <em>Balance Sheet</em>.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CA</span> <span class="o">=</span> <span class="n">BS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;totalCurrentAssets&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">]</span>
+<span class="n">CL</span> <span class="o">=</span> <span class="n">BS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;totalCurrentLiabilities&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104792000000
+318000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CR</span> <span class="o">=</span> <span class="p">(</span><span class="n">CA</span><span class="o">/</span><span class="n">CL</span><span class="p">)</span>
+<span class="n">CR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>329.5345911949685
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>This is a lengthy and messy answer. Let’s round off the number to two decimal places.</strong> <br />
+<strong>Use the round function to round off the number to two decimal places.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CR</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">CA</span><span class="o">/</span><span class="n">CL</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">CR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>329.53
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="font-color-blue-now-you-do-it-font">
+<h2><font color=blue>Now You Do It!</font><a class="headerlink" href="#font-color-blue-now-you-do-it-font" title="Permalink to this heading">#</a></h2>
+<p><strong>Calculate the Current Ratio for 2018 and round off the number two decimal places.</strong> <br />
+<strong>Replace the “x” values for real values.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CA</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">]</span>
+<span class="n">CL</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;totalCurrentLiabilities&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">CA</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">CL</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;totalCurrentLiabilities&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CR</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">CA</span><span class="o">/</span><span class="n">CL</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">CR</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operating-cash-flow-to-sales-ratio">
+<h2>Operating Cash Flow to Sales Ratio<a class="headerlink" href="#operating-cash-flow-to-sales-ratio" title="Permalink to this heading">#</a></h2>
+<p><strong>This example uses two financial statements: the <em>Cash Flow Statement</em> and the <em>Income Statement</em>.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OperatingCashFlow</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;netCashProvidedByOperatingActivities&#39;</span><span class="p">,</span><span class="s1">&#39;2022-12-31&#39;</span><span class="p">]</span>
+<span class="n">Revenue</span> <span class="o">=</span> <span class="n">IS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span><span class="s1">&#39;2022-12-31&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Operating_CF_to_Sales_Ratio</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">OperatingCashFlow</span><span class="o">/</span><span class="n">Revenue</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Operating_CF_to_Sales_Ratio</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2><font color=blue>Now You Do It!</font><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p><strong>Calculate the Operating Cash Flow Sales Ratio for 2021 and round off the number three decimal places.</strong> <br />
+<strong>Replace the “x” values for real values.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OperatingCashFlow</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">Revenue</span> <span class="o">=</span> <span class="n">IS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Operating_CF_to_Sales_Ratio</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">Revenue</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">Operating_CF_to_Sales_Ratio</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="let-s-get-more-complex">
+<h2>Let’s get more complex.<a class="headerlink" href="#let-s-get-more-complex" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="net-present-value-calculation">
+<h2>Net Present Value Calculation<a class="headerlink" href="#net-present-value-calculation" title="Permalink to this heading">#</a></h2>
+<p>Example: Let’s assume that in 2017, a company is considering making an investment is an asset which is expected to have a useful life of five years with no salvage value. The company expects the investment to cost approximately $25,000,000,000. Since this investment is somewhat risky, it will only consider the investment with a 25% return. Let’s use the cash flows that actually transpired for the company during 2018-2022.</p>
+<p><strong>The first step is to isolate the cash flows from operating activities to calculate NPV. We do so by identifying cash flows for a period of time.</strong> \</p>
+<p>Let’s call the operating cash flows CashFlow and pull the data from the cash flow statement over the years 2018-2022. We can do this by identifying the row name operatingCashFlow and grab each column year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CashFlow</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">],[</span><span class="s1">&#39;2022-12-31&#39;</span><span class="p">,</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">,</span><span class="s1">&#39;2020-12-31&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">,</span><span class="s1">&#39;2018-12-31&#39;</span><span class="p">]]</span>
+<span class="n">CashFlow</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>We can get the same result by identifying the row by its index number and grab all columns.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CashFlow</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">34</span><span class="p">],:]</span>
+<span class="n">CashFlow</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The presentation above shows a data frame of Operating Cash Flows. However, we need to just extract the Operating Cash Flows for each year. Therefore, we separate out each year and label them as objects CF1 through CF5.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CF1</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">,</span><span class="s1">&#39;2018-12-31&#39;</span><span class="p">]</span>
+<span class="n">CF2</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">]</span>
+<span class="n">CF3</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">,</span><span class="s1">&#39;2020-12-31&#39;</span><span class="p">]</span>
+<span class="n">CF4</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">,</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">]</span>
+<span class="n">CF5</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;operatingCashFlow&#39;</span><span class="p">,</span><span class="s1">&#39;2022-12-31&#39;</span><span class="p">]</span>
+<span class="c1"># f1.loc[&#39;a&#39;, &#39;A&#39;]</span>
+<span class="c1"># CF1 = CFS.loc[[34,0]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CF1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CF2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CF3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CF4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CF5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>We need to set the initial investment and interest rates as objects and set values to them.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_investment</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25000000000</span>
+<span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">.25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Apply the objects to a Net Present Value equation and round off the numbers to no decimal places, add a dollar sign and commas.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NPV</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">initial_investment</span> <span class="o">+</span> <span class="p">(</span><span class="n">CF1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">CF2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">CF3</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">CF4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">CF5</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">),)</span>
+<span class="n">NPV</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">NPV</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2><font color=blue>Now You Do It!</font><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><strong>Calculate the Net Present Value for a project that requires an investment of 30 billion dollars and a 30% return.</strong> <br />
+<strong>Use the same cash flows from 2018-2022 as above.</strong> <br />
+<strong>Replace the “x” values for real values.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CashFlow</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">],[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]]</span>
+<span class="n">CashFlow</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CF1</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">CF2</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">CF3</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">CF4</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">CF5</span> <span class="o">=</span> <span class="n">CFS</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_investment</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">interest_rate</span> <span class="o">=</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NPV</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">),)</span>
+<span class="n">NPV</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">NPV</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-packages">Import Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-financial-modeling-prep-with-api-key-define-key-and-ticker-symbol-as-objects">Connect to Financial Modeling Prep with API Key. Define key and ticker symbol as objects.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-link-for-the-type-of-financial-document-you-want-to-download-that-provided-by-fmp-on-the-api-documentation-page">Insert link for the type of financial document you want to download that provided by FMP on the API Documentation page:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-up-the-url-and-use-the-request-package-to-acquire-the-data-from-a-website-format-is-a-string-manipulation-function">Break up the URL and use the request package to acquire the data from a website. Format is a string manipulation function.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-that-the-request-r-is-a-dictionary-in-json-format-and-assign-the-income-statement-data-an-object-name-called-is-data">Verify that the request “r” is a dictionary in JSON format and assign the Income Statement data an object name called IS_data.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-loop-run-a-loop-through-the-key-value-pairs">Example of a loop: run a loop through the key-value pairs.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-is-r-json-bs-r-json-and-cfs-r-json-are-dictionaries">Verify IS_r.json(), BS_r.json and CFS_r.json are dictionaries.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-pandas-to-convert-is-r-bs-r-and-cfs-r-dictionaries-to-dataframes">Use Pandas to convert IS_r, BS_r and CFS_r Dictionaries to DataFrames.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#since-this-is-financial-data-for-is-r-bs-r-and-cfs-r-transpose-the-date-rows-to-columns">Since this is financial data, for IS_r, BS_r and CFS_r, transpose the date rows to columns.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-transposing-the-header-columns-will-show-their-column-index-positions-therefore-the-column-header-names-need-to-replace-the-column-index-positions">When transposing, the header columns will show their column index positions. Therefore, the column header names need to replace the column index positions.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-get-company-financial-ratios">We can get Company Financial Ratios:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-some-financial-ratios-and-practice-calculating-them">Let’s look at some financial ratios and practice calculating them.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-ratio-calculation">Current Ratio Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-blue-now-you-do-it-font"><font color="blue">Now You Do It!</font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-cash-flow-to-sales-ratio">Operating Cash Flow to Sales Ratio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="blue">Now You Do It!</font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-more-complex">Let’s get more complex.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#net-present-value-calculation">Net Present Value Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><font color="blue">Now You Do It!</font></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joseph Foy and Calvester Legister
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
